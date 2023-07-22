@@ -3,7 +3,6 @@ package com.example.wearablesensordata
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Lifecycle
@@ -34,7 +33,7 @@ class MainMobileActivity : AppCompatActivity(), OnCapabilityChangedListener,
     private lateinit var nodeClient: NodeClient
     private lateinit var remoteActivityHelper: RemoteActivityHelper
 
-    private var wearNodesWithApp: Set<Node>? = null
+    private var connectedNodesWithApp: Set<Node>? = null
     private var allConnectedNodes: List<Node>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,44 +44,38 @@ class MainMobileActivity : AppCompatActivity(), OnCapabilityChangedListener,
 
         initWearAPIs()
 
-        // Perform the initial update of the UI
-        updateUI()
-
         initialRequestForWearDevices()
     }
 
     override fun onPause() {
         super.onPause()
 
-        // Remove listeners
         capabilityClient.removeListener(this, CAPABILITY_WEAR_APP)
-        Wearable.getMessageClient(this).removeListener(this)
     }
 
     override fun onResume() {
         super.onResume()
 
-        // Add listeners
         capabilityClient.addListener(this, CAPABILITY_WEAR_APP)
-        Wearable.getMessageClient(this).addListener(this)
     }
 
     /*
      * When capabilities change (install/uninstall wear app).
      */
     override fun onCapabilityChanged(capabilityInfo: CapabilityInfo) {
-        wearNodesWithApp = capabilityInfo.nodes
+        connectedNodesWithApp = capabilityInfo.nodes
 
         lifecycleScope.launch {
-            // Because we have an updated list of devices with/without our app, we need to also update
-            // our list of active Wear devices.
-            findAllWearDevices()
+            // Because we have an updated list of devices with/without our app,
+            // we need to also update our list of active Wear devices.
+            updateAllWearDevices()
         }
     }
 
-    // When message is received from MessageClient.
+    /*
+     * When message is received from MessageClient.
+     */
     override fun onMessageReceived(p0: MessageEvent) {
-        Log.d("lombichh", "Message received: $p0")
         if (p0.path == SENSOR_MESSAGE_PATH) {
             binding.sensorTextview.text = String(p0.data)
         }
@@ -99,25 +92,25 @@ class MainMobileActivity : AppCompatActivity(), OnCapabilityChangedListener,
             lifecycle.repeatOnLifecycle(Lifecycle.State.RESUMED) {
                 launch {
                     // Initial request for devices with our capability, aka, our Wear app installed.
-                    findWearDevicesWithApp()
+                    updateWearDevicesWithApp()
                 }
                 launch {
                     // Initial request for all Wear devices connected (with or without our capability).
-                    findAllWearDevices()
+                    updateAllWearDevices()
                 }
             }
         }
     }
 
-    private suspend fun findWearDevicesWithApp() {
+    private suspend fun updateWearDevicesWithApp() {
         try {
             val capabilityInfo = capabilityClient
                 .getCapability(CAPABILITY_WEAR_APP, CapabilityClient.FILTER_ALL)
                 .await()
 
             withContext(Dispatchers.Main) {
-                wearNodesWithApp = capabilityInfo.nodes
-                updateUI()
+                connectedNodesWithApp = capabilityInfo.nodes
+                checkPairingState()
             }
         } catch (cancellationException: CancellationException) {
             // Request was cancelled normally
@@ -127,13 +120,13 @@ class MainMobileActivity : AppCompatActivity(), OnCapabilityChangedListener,
         }
     }
 
-    private suspend fun findAllWearDevices() {
+    private suspend fun updateAllWearDevices() {
         try {
             val connectedNodes = nodeClient.connectedNodes.await()
 
             withContext(Dispatchers.Main) {
                 allConnectedNodes = connectedNodes
-                updateUI()
+                checkPairingState()
             }
         } catch (cancellationException: CancellationException) {
             // Request was cancelled normally
@@ -142,41 +135,46 @@ class MainMobileActivity : AppCompatActivity(), OnCapabilityChangedListener,
         }
     }
 
-    private fun updateUI() {
-        val wearNodesWithApp = wearNodesWithApp
+    private fun checkPairingState() {
+        val connectedNodesWithApp = connectedNodesWithApp
         val allConnectedNodes = allConnectedNodes
 
         when {
-            wearNodesWithApp == null || allConnectedNodes == null -> {
+            connectedNodesWithApp == null || allConnectedNodes == null -> {
                 // Waiting on Results for both connected nodes and nodes with app
                 binding.infoTextview.text = getString(R.string.message_checking)
             }
             allConnectedNodes.isEmpty() -> {
                 // No devices connected
                 binding.infoTextview.text = getString(R.string.message_checking)
+
+                Wearable.getMessageClient(this).removeListener(this)
             }
-            wearNodesWithApp.isEmpty() -> {
+            connectedNodesWithApp.isEmpty() -> {
                 // Missing on all devices
                 binding.infoTextview.text = getString(R.string.message_missing_all)
+
+                Wearable.getMessageClient(this).removeListener(this)
             }
-            wearNodesWithApp.size < allConnectedNodes.size -> {
+            connectedNodesWithApp.size < allConnectedNodes.size -> {
                 // Installed on some devices
-                // TODO: Add code to communicate with the wear app via Wear APIs
-                //       (MessageClient, DataClient, etc.)
                 binding.infoTextview.text =
-                    getString(R.string.message_some_installed, wearNodesWithApp.toString())
+                    getString(R.string.message_some_installed, connectedNodesWithApp.toString())
+
+                Wearable.getMessageClient(this).addListener(this)
             }
             else -> {
-                // TODO: Add code to communicate with the wear app via Wear APIs
-                //       (MessageClient, DataClient, etc.)
+                // Installed on all devices
                 binding.infoTextview.text =
-                    getString(R.string.message_all_installed, wearNodesWithApp.toString())
+                    getString(R.string.message_all_installed, connectedNodesWithApp.toString())
+
+                Wearable.getMessageClient(this).addListener(this)
             }
         }
     }
 
     private fun openPlayStoreOnWearDevicesWithoutApp() {
-        val wearNodesWithApp = wearNodesWithApp ?: return
+        val wearNodesWithApp = connectedNodesWithApp ?: return
         val allConnectedNodes = allConnectedNodes ?: return
 
         // Determine the list of nodes (wear devices) that don't have the app installed yet.

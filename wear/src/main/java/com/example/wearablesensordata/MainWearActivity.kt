@@ -47,10 +47,9 @@ class MainWearActivity : FragmentActivity(), CapabilityClient.OnCapabilityChange
         setContentView(binding.root)
 
         initMobileAPIs()
+        initSensor()
 
         binding.infoTextview.text = getString(R.string.message_checking)
-
-        initSensor()
     }
 
     override fun onPause() {
@@ -77,12 +76,12 @@ class MainWearActivity : FragmentActivity(), CapabilityClient.OnCapabilityChange
         // capability), so I am just grabbing the first one (which should be the only one).
         androidPhoneNodeWithApp = capabilityInfo.nodes.firstOrNull()
 
-        updateUi()
-
-        configureSensorListeners()
+        checkPairingState()
     }
 
-    // When sensor data changes
+    /*
+     * When sensor data changes.
+     */
     override fun onSensorChanged(p0: SensorEvent?) {
         // Send sensor data to phone through MessageClient
         androidPhoneNodeWithApp?.id?.also { nodeId ->
@@ -105,7 +104,9 @@ class MainWearActivity : FragmentActivity(), CapabilityClient.OnCapabilityChange
         binding.sensorTextview.text = p0?.values?.get(0).toString()
     }
 
-    // When sensor accuracy changes
+    /*
+     * When sensor accuracy changes.
+     */
     override fun onAccuracyChanged(p0: Sensor?, p1: Int) {}
 
     private fun initMobileAPIs() {
@@ -128,8 +129,7 @@ class MainWearActivity : FragmentActivity(), CapabilityClient.OnCapabilityChange
                 // There should only ever be one phone in a node set (much less w/ the correct
                 // capability), so I am just grabbing the first one (which should be the only one).
                 androidPhoneNodeWithApp = capabilityInfo.nodes.firstOrNull()
-                updateUi()
-                configureSensorListeners()
+                checkPairingState()
             }
         } catch (cancellationException: CancellationException) {
             // Request was cancelled normally
@@ -138,12 +138,19 @@ class MainWearActivity : FragmentActivity(), CapabilityClient.OnCapabilityChange
         }
     }
 
-    private fun configureSensorListeners() {
+    private fun checkPairingState() {
+        val androidPhoneNodeWithApp = androidPhoneNodeWithApp
+
         if (androidPhoneNodeWithApp != null) {
             // App is installed on remote node
+            binding.infoTextview.text =
+                getString(R.string.message_installed, androidPhoneNodeWithApp.displayName)
+
             registerSensorListeners()
         } else {
             // App is missing on remote node
+            binding.infoTextview.text = getString(R.string.message_missing)
+
             sensorManager.unregisterListener(this)
         }
     }
@@ -151,21 +158,6 @@ class MainWearActivity : FragmentActivity(), CapabilityClient.OnCapabilityChange
     private fun registerSensorListeners() {
         mLight?.also { light ->
             sensorManager.registerListener(this, light, SensorManager.SENSOR_DELAY_NORMAL)
-        }
-    }
-
-    private fun updateUi() {
-        val androidPhoneNodeWithApp = androidPhoneNodeWithApp
-
-        if (androidPhoneNodeWithApp != null) {
-            // App is installed on remote node
-            // TODO: Add your code to communicate with the phone app via
-            //       Wear APIs (MessageClient, DataClient, etc.)
-            binding.infoTextview.text =
-                getString(R.string.message_installed, androidPhoneNodeWithApp.displayName)
-        } else {
-            // App is missing on remote node
-            binding.infoTextview.text = getString(R.string.message_missing)
         }
     }
 
