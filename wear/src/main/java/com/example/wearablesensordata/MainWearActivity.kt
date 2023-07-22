@@ -13,6 +13,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.wear.remote.interactions.RemoteActivityHelper
 import androidx.wear.widget.ConfirmationOverlay
 import com.example.wearablesensordata.databinding.ActivityMainBinding
+import com.google.android.gms.tasks.Task
 import com.google.android.gms.wearable.CapabilityClient
 import com.google.android.gms.wearable.CapabilityInfo
 import com.google.android.gms.wearable.Node
@@ -54,24 +55,16 @@ class MainWearActivity : FragmentActivity(), CapabilityClient.OnCapabilityChange
     override fun onPause() {
         super.onPause()
 
-        // Unregister listeners
         Wearable.getCapabilityClient(this).removeListener(this, CAPABILITY_PHONE_APP)
-
-        sensorManager.unregisterListener(this)
     }
 
     override fun onResume() {
         super.onResume()
 
-        // Register capability listener
+        // Register capability listener and check if phone has app manually the first time.
         Wearable.getCapabilityClient(this).addListener(this, CAPABILITY_PHONE_APP)
         lifecycleScope.launch {
             checkIfPhoneHasApp()
-        }
-
-        // Register sensor listeners
-        mLight?.also { light ->
-            sensorManager.registerListener(this, light, SensorManager.SENSOR_DELAY_NORMAL)
         }
     }
 
@@ -82,11 +75,26 @@ class MainWearActivity : FragmentActivity(), CapabilityClient.OnCapabilityChange
         // There should only ever be one phone in a node set (much less w/ the correct
         // capability), so I am just grabbing the first one (which should be the only one).
         androidPhoneNodeWithApp = capabilityInfo.nodes.firstOrNull()
+
         updateUi()
+
+        configureSensorListeners()
     }
 
     // When sensor data changes
     override fun onSensorChanged(p0: SensorEvent?) {
+        // Send sensor data to phone through MessageClient
+        androidPhoneNodeWithApp?.id?.also { nodeId ->
+            val sendTask: Task<*> = Wearable.getMessageClient(this).sendMessage(
+                nodeId,
+                SENSOR_MESSAGE_PATH,
+                p0?.values?.get(0).toString()?.toByteArray()
+            ).apply {
+                /*addOnSuccessListener { ... }
+                addOnFailureListener { ... }*/
+            }
+        }
+
         binding.sensorTextview.text = p0?.values?.get(0).toString()
     }
 
@@ -114,11 +122,28 @@ class MainWearActivity : FragmentActivity(), CapabilityClient.OnCapabilityChange
                 // capability), so I am just grabbing the first one (which should be the only one).
                 androidPhoneNodeWithApp = capabilityInfo.nodes.firstOrNull()
                 updateUi()
+                configureSensorListeners()
             }
         } catch (cancellationException: CancellationException) {
             // Request was cancelled normally
         } catch (throwable: Throwable) {
             // Capability request failed to return any results
+        }
+    }
+
+    private fun configureSensorListeners() {
+        if (androidPhoneNodeWithApp != null) {
+            // App is installed on remote node
+            registerSensorListeners()
+        } else {
+            // App is missing on remote node
+            sensorManager.unregisterListener(this)
+        }
+    }
+
+    private fun registerSensorListeners() {
+        mLight?.also { light ->
+            sensorManager.registerListener(this, light, SensorManager.SENSOR_DELAY_NORMAL)
         }
     }
 
@@ -167,5 +192,8 @@ class MainWearActivity : FragmentActivity(), CapabilityClient.OnCapabilityChange
         // TODO: Replace with actual link.
         private const val PLAY_STORE_APP_URI =
             "market://details?id=com.example.wearablesensordata"
+
+        // Sensor message path
+        private const val SENSOR_MESSAGE_PATH = "/sensor"
     }
 }
