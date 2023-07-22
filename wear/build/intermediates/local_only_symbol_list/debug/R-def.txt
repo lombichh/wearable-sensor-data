@@ -1,0 +1,11 @@
+R_DEF: Internal format may change without notice
+local
+array android_wear_capabilities
+id main_textview
+layout activity_main
+mipmap ic_launcher
+string app_name
+string install_app
+string message_checking
+string message_installed
+string message_missing

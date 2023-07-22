@@ -1,0 +1,20 @@
+R_DEF: Internal format may change without notice
+local
+array android_wear_capabilities
+color colorAccent
+color colorPrimary
+color colorPrimaryDark
+id information_text_view
+id remote_open_button
+layout activity_main
+mipmap ic_launcher
+string app_name
+string install_app
+string message_all_installed
+string message_checking
+string message_missing_all
+string message_no_devices
+string message_some_installed
+string store_request_successful
+string store_request_unsuccessful
+style AppThemeCustom
