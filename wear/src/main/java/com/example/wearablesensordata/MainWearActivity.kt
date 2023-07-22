@@ -8,6 +8,7 @@ import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.wear.remote.interactions.RemoteActivityHelper
@@ -90,8 +91,14 @@ class MainWearActivity : FragmentActivity(), CapabilityClient.OnCapabilityChange
                 SENSOR_MESSAGE_PATH,
                 p0?.values?.get(0).toString()?.toByteArray()
             ).apply {
-                /*addOnSuccessListener { ... }
-                addOnFailureListener { ... }*/
+                addOnSuccessListener {
+                    // Message sent successfully with no errors
+                    Log.d("lombichh", "Message sent")
+                }
+                addOnFailureListener {
+                    // Message failed to send
+                    Log.d("lombichh", "Message failed")
+                }
             }
         }
 

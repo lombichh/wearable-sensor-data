@@ -4,8 +4,9 @@ array android_wear_capabilities
 color colorAccent
 color colorPrimary
 color colorPrimaryDark
-id main_textview
+id info_textview
 id nestedScrollView
+id sensor_textview
 layout activity_main
 mipmap ic_launcher
 string app_name

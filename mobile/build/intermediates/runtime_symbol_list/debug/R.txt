@@ -1122,6 +1122,7 @@ int id image 0x7f0900a7
 int id immediateStop 0x7f0900a8
 int id included 0x7f0900a9
 int id info 0x7f0900aa
+int id info_textview 0x7f090141
 int id invisible 0x7f0900ac
 int id italic 0x7f0900ad
 int id jumpToEnd 0x7f0900ae
@@ -1135,7 +1136,6 @@ int id line3 0x7f0900b5
 int id linear 0x7f0900b6
 int id listMode 0x7f0900b7
 int id list_item 0x7f0900b8
-int id main_textview 0x7f09013f
 int id match_constraint 0x7f0900b9
 int id match_parent 0x7f0900ba
 int id message 0x7f0900bb
@@ -1192,6 +1192,7 @@ int id search_plate 0x7f0900ed
 int id search_src_text 0x7f0900ee
 int id search_voice_btn 0x7f0900ef
 int id select_dialog_listview 0x7f0900f0
+int id sensor_textview 0x7f090142
 int id sharedValueSet 0x7f0900f1
 int id sharedValueUnset 0x7f0900f2
 int id shortcut 0x7f0900f3

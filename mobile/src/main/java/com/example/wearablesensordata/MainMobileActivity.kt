@@ -3,6 +3,7 @@ package com.example.wearablesensordata
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Lifecycle
@@ -13,6 +14,8 @@ import com.example.wearablesensordata.databinding.ActivityMainBinding
 import com.google.android.gms.wearable.CapabilityClient
 import com.google.android.gms.wearable.CapabilityClient.OnCapabilityChangedListener
 import com.google.android.gms.wearable.CapabilityInfo
+import com.google.android.gms.wearable.MessageClient.OnMessageReceivedListener
+import com.google.android.gms.wearable.MessageEvent
 import com.google.android.gms.wearable.Node
 import com.google.android.gms.wearable.NodeClient
 import com.google.android.gms.wearable.Wearable
@@ -23,7 +26,8 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withContext
 
-class MainMobileActivity : AppCompatActivity(), OnCapabilityChangedListener {
+class MainMobileActivity : AppCompatActivity(), OnCapabilityChangedListener,
+    OnMessageReceivedListener {
     private lateinit var binding: ActivityMainBinding
 
     private lateinit var capabilityClient: CapabilityClient
@@ -50,13 +54,17 @@ class MainMobileActivity : AppCompatActivity(), OnCapabilityChangedListener {
     override fun onPause() {
         super.onPause()
 
+        // Remove listeners
         capabilityClient.removeListener(this, CAPABILITY_WEAR_APP)
+        Wearable.getMessageClient(this).removeListener(this)
     }
 
     override fun onResume() {
         super.onResume()
 
+        // Add listeners
         capabilityClient.addListener(this, CAPABILITY_WEAR_APP)
+        Wearable.getMessageClient(this).addListener(this)
     }
 
     /*
@@ -69,6 +77,14 @@ class MainMobileActivity : AppCompatActivity(), OnCapabilityChangedListener {
             // Because we have an updated list of devices with/without our app, we need to also update
             // our list of active Wear devices.
             findAllWearDevices()
+        }
+    }
+
+    // When message is received from MessageClient.
+    override fun onMessageReceived(p0: MessageEvent) {
+        Log.d("lombichh", "Message received: $p0")
+        if (p0.path == SENSOR_MESSAGE_PATH) {
+            binding.sensorTextview.text = String(p0.data)
         }
     }
 
@@ -133,27 +149,27 @@ class MainMobileActivity : AppCompatActivity(), OnCapabilityChangedListener {
         when {
             wearNodesWithApp == null || allConnectedNodes == null -> {
                 // Waiting on Results for both connected nodes and nodes with app
-                binding.mainTextview.text = getString(R.string.message_checking)
+                binding.infoTextview.text = getString(R.string.message_checking)
             }
             allConnectedNodes.isEmpty() -> {
                 // No devices connected
-                binding.mainTextview.text = getString(R.string.message_checking)
+                binding.infoTextview.text = getString(R.string.message_checking)
             }
             wearNodesWithApp.isEmpty() -> {
                 // Missing on all devices
-                binding.mainTextview.text = getString(R.string.message_missing_all)
+                binding.infoTextview.text = getString(R.string.message_missing_all)
             }
             wearNodesWithApp.size < allConnectedNodes.size -> {
                 // Installed on some devices
                 // TODO: Add code to communicate with the wear app via Wear APIs
                 //       (MessageClient, DataClient, etc.)
-                binding.mainTextview.text =
+                binding.infoTextview.text =
                     getString(R.string.message_some_installed, wearNodesWithApp.toString())
             }
             else -> {
                 // TODO: Add code to communicate with the wear app via Wear APIs
                 //       (MessageClient, DataClient, etc.)
-                binding.mainTextview.text =
+                binding.infoTextview.text =
                     getString(R.string.message_all_installed, wearNodesWithApp.toString())
             }
         }
@@ -205,5 +221,8 @@ class MainMobileActivity : AppCompatActivity(), OnCapabilityChangedListener {
         // TODO: Replace with actual link.
         private const val PLAY_STORE_APP_URI =
             "market://details?id=com.example.wearablesensordata"
+
+        // Sensor message path
+        private const val SENSOR_MESSAGE_PATH = "/sensor"
     }
 }
