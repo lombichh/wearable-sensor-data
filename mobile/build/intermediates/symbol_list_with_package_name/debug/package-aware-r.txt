@@ -1123,7 +1123,6 @@ id image
 id immediateStop
 id included
 id info
-id information_text_view
 id invisible
 id italic
 id jumpToEnd
@@ -1137,12 +1136,14 @@ id line3
 id linear
 id listMode
 id list_item
+id main_textview
 id match_constraint
 id match_parent
 id message
 id middle
 id motion_base
 id multiply
+id nestedScrollView
 id never
 id neverCompleteToEnd
 id neverCompleteToStart
@@ -1171,7 +1172,6 @@ id progress_horizontal
 id radio
 id ratio
 id rectangles
-id remote_open_button
 id report_drawn
 id reverseSawtooth
 id right

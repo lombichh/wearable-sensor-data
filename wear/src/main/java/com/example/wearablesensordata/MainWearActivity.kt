@@ -1,6 +1,11 @@
 package com.example.wearablesensordata
 
+import android.content.Context
 import android.content.Intent
+import android.hardware.Sensor
+import android.hardware.SensorEvent
+import android.hardware.SensorEventListener
+import android.hardware.SensorManager
 import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.FragmentActivity
@@ -19,13 +24,19 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withContext
 
-class MainWearActivity : FragmentActivity(), CapabilityClient.OnCapabilityChangedListener {
+class MainWearActivity : FragmentActivity(), CapabilityClient.OnCapabilityChangedListener,
+    SensorEventListener {
     private lateinit var binding: ActivityMainBinding
 
+    // Capability vars
     private lateinit var capabilityClient: CapabilityClient
     private lateinit var remoteActivityHelper: RemoteActivityHelper
 
     private var androidPhoneNodeWithApp: Node? = null
+
+    // Sensor vars
+    private lateinit var sensorManager: SensorManager
+    private var mLight: Sensor? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,21 +46,32 @@ class MainWearActivity : FragmentActivity(), CapabilityClient.OnCapabilityChange
 
         initMobileAPIs()
 
-        binding.mainTextview.text = getString(R.string.message_checking)
+        binding.infoTextview.text = getString(R.string.message_checking)
+
+        initSensor()
     }
 
     override fun onPause() {
         super.onPause()
 
+        // Unregister listeners
         Wearable.getCapabilityClient(this).removeListener(this, CAPABILITY_PHONE_APP)
+
+        sensorManager.unregisterListener(this)
     }
 
     override fun onResume() {
         super.onResume()
 
+        // Register capability listener
         Wearable.getCapabilityClient(this).addListener(this, CAPABILITY_PHONE_APP)
         lifecycleScope.launch {
             checkIfPhoneHasApp()
+        }
+
+        // Register sensor listeners
+        mLight?.also { light ->
+            sensorManager.registerListener(this, light, SensorManager.SENSOR_DELAY_NORMAL)
         }
     }
 
@@ -63,9 +85,22 @@ class MainWearActivity : FragmentActivity(), CapabilityClient.OnCapabilityChange
         updateUi()
     }
 
+    // When sensor data changes
+    override fun onSensorChanged(p0: SensorEvent?) {
+        binding.sensorTextview.text = p0?.values?.get(0).toString()
+    }
+
+    // When sensor accuracy changes
+    override fun onAccuracyChanged(p0: Sensor?, p1: Int) {}
+
     private fun initMobileAPIs() {
         capabilityClient = Wearable.getCapabilityClient(this)
         remoteActivityHelper = RemoteActivityHelper(this)
+    }
+
+    private fun initSensor() {
+        sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
+        mLight = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT)
     }
 
     private suspend fun checkIfPhoneHasApp() {
@@ -94,11 +129,11 @@ class MainWearActivity : FragmentActivity(), CapabilityClient.OnCapabilityChange
             // App is installed on remote node
             // TODO: Add your code to communicate with the phone app via
             //       Wear APIs (MessageClient, DataClient, etc.)
-            binding.mainTextview.text =
+            binding.infoTextview.text =
                 getString(R.string.message_installed, androidPhoneNodeWithApp.displayName)
         } else {
             // App is missing on remote node
-            binding.mainTextview.text = getString(R.string.message_missing)
+            binding.infoTextview.text = getString(R.string.message_missing)
         }
     }
 

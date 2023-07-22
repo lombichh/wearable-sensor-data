@@ -20,11 +20,16 @@ public final class ActivityMainBinding implements ViewBinding {
   private final ScrollView rootView;
 
   @NonNull
-  public final TextView mainTextview;
+  public final TextView infoTextview;
 
-  private ActivityMainBinding(@NonNull ScrollView rootView, @NonNull TextView mainTextview) {
+  @NonNull
+  public final TextView sensorTextview;
+
+  private ActivityMainBinding(@NonNull ScrollView rootView, @NonNull TextView infoTextview,
+      @NonNull TextView sensorTextview) {
     this.rootView = rootView;
-    this.mainTextview = mainTextview;
+    this.infoTextview = infoTextview;
+    this.sensorTextview = sensorTextview;
   }
 
   @Override
@@ -54,13 +59,19 @@ public final class ActivityMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.main_textview;
-      TextView mainTextview = ViewBindings.findChildViewById(rootView, id);
-      if (mainTextview == null) {
+      id = R.id.info_textview;
+      TextView infoTextview = ViewBindings.findChildViewById(rootView, id);
+      if (infoTextview == null) {
         break missingId;
       }
 
-      return new ActivityMainBinding((ScrollView) rootView, mainTextview);
+      id = R.id.sensor_textview;
+      TextView sensorTextview = ViewBindings.findChildViewById(rootView, id);
+      if (sensorTextview == null) {
+        break missingId;
+      }
+
+      return new ActivityMainBinding((ScrollView) rootView, infoTextview, sensorTextview);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

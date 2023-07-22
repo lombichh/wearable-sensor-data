@@ -1,7 +1,8 @@
 R_DEF: Internal format may change without notice
 local
 array android_wear_capabilities
-id main_textview
+id info_textview
+id sensor_textview
 layout activity_main
 mipmap ic_launcher
 string app_name

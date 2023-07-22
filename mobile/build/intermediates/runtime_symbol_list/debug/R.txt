@@ -1122,7 +1122,6 @@ int id image 0x7f0900a7
 int id immediateStop 0x7f0900a8
 int id included 0x7f0900a9
 int id info 0x7f0900aa
-int id information_text_view 0x7f0900ab
 int id invisible 0x7f0900ac
 int id italic 0x7f0900ad
 int id jumpToEnd 0x7f0900ae
@@ -1136,12 +1135,14 @@ int id line3 0x7f0900b5
 int id linear 0x7f0900b6
 int id listMode 0x7f0900b7
 int id list_item 0x7f0900b8
+int id main_textview 0x7f09013f
 int id match_constraint 0x7f0900b9
 int id match_parent 0x7f0900ba
 int id message 0x7f0900bb
 int id middle 0x7f0900bc
 int id motion_base 0x7f0900bd
 int id multiply 0x7f0900be
+int id nestedScrollView 0x7f090140
 int id never 0x7f0900bf
 int id neverCompleteToEnd 0x7f0900c0
 int id neverCompleteToStart 0x7f0900c1
@@ -1170,7 +1171,6 @@ int id progress_horizontal 0x7f0900d7
 int id radio 0x7f0900d8
 int id ratio 0x7f0900d9
 int id rectangles 0x7f0900da
-int id remote_open_button 0x7f0900db
 int id report_drawn 0x7f0900dc
 int id reverseSawtooth 0x7f0900dd
 int id right 0x7f0900de

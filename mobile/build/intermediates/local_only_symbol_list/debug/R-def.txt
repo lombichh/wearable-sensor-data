@@ -4,8 +4,8 @@ array android_wear_capabilities
 color colorAccent
 color colorPrimary
 color colorPrimaryDark
-id information_text_view
-id remote_open_button
+id main_textview
+id nestedScrollView
 layout activity_main
 mipmap ic_launcher
 string app_name
