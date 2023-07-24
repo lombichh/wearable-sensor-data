@@ -963,6 +963,7 @@ id SHOW_PATH
 id SHOW_PROGRESS
 id SYM
 id accelerate
+id accelerometer_textview
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
 id accessibility_custom_action_1
@@ -1109,6 +1110,7 @@ id graph_wrap
 id group_divider
 id grouping
 id groups
+id gyroscope_textview
 id home
 id homeAsUp
 id honorRequest
@@ -1132,6 +1134,7 @@ id layout
 id left
 id legacy
 id light
+id light_textview
 id line1
 id line3
 id linear
@@ -1193,7 +1196,6 @@ id search_plate
 id search_src_text
 id search_voice_btn
 id select_dialog_listview
-id sensor_textview
 id sharedValueSet
 id sharedValueUnset
 id shortcut
@@ -1238,6 +1240,7 @@ id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
 id tag_window_insets_animation_callback
+id temperature_textview
 id text
 id text2
 id textSpacerNoButtons

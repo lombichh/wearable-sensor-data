@@ -15,7 +15,6 @@ import androidx.wear.remote.interactions.RemoteActivityHelper
 import androidx.wear.widget.ConfirmationOverlay
 import com.example.wearablesensordata.data.SensorData
 import com.example.wearablesensordata.databinding.ActivityMainBinding
-import com.google.android.gms.tasks.Task
 import com.google.android.gms.wearable.CapabilityClient
 import com.google.android.gms.wearable.CapabilityInfo
 import com.google.android.gms.wearable.Node
@@ -39,7 +38,10 @@ class MainWearActivity : FragmentActivity(), CapabilityClient.OnCapabilityChange
 
     // Sensor vars
     private lateinit var sensorManager: SensorManager
-    private var mLight: Sensor? = null
+    private var accelerometerSensor: Sensor? = null
+    private var gyroscopeSensor: Sensor? = null
+    private var temperatureSensor: Sensor? = null
+    private var lightSensor: Sensor? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -84,34 +86,36 @@ class MainWearActivity : FragmentActivity(), CapabilityClient.OnCapabilityChange
      * When sensor data changes.
      */
     override fun onSensorChanged(p0: SensorEvent?) {
-        // Create SensorData object
-        val sensorData = SensorData(
-            null,
-            null,
-            null,
-            null,
-            p0?.values?.get(0)
-        )
-
-        // Send sensor data to phone through MessageClient
-        androidPhoneNodeWithApp?.id?.also { nodeId ->
-            val sendTask: Task<*> = Wearable.getMessageClient(this).sendMessage(
-                nodeId,
-                SENSOR_MESSAGE_PATH,
-                SensorData.toByteArray(sensorData)
-            ).apply {
-                addOnSuccessListener {
-                    // Message sent successfully with no errors
-                    Log.d("lombichh", "Message sent")
+        if (p0 != null) {
+            // Check sensor type to correctly convert into byte array message
+            // and send it to the phone.
+            when (p0.sensor.type) {
+                Sensor.TYPE_ACCELEROMETER -> {
+                    val sensorMessage = SensorData.accelerometerValuesToSensorMessage(
+                        p0.values[0],
+                        p0.values[1],
+                        p0.values[2]
+                    )
+                    sendSensorMessageToPhone(sensorMessage)
                 }
-                addOnFailureListener { exception ->
-                    // Message failed to send
-                    Log.d("lombichh", "Message failed: $exception")
+                Sensor.TYPE_GYROSCOPE -> {
+                    val sensorMessage = SensorData.gyroscopeValuesToSensorMessage(
+                        p0.values[0],
+                        p0.values[1],
+                        p0.values[2]
+                    )
+                    sendSensorMessageToPhone(sensorMessage)
+                }
+                Sensor.TYPE_AMBIENT_TEMPERATURE -> {
+                    val sensorMessage = SensorData.temperatureValueToSensorMessage(p0.values[0])
+                    sendSensorMessageToPhone(sensorMessage)
+                }
+                Sensor.TYPE_LIGHT -> {
+                    val sensorMessage = SensorData.lightValueToSensorMessage(p0.values[0])
+                    sendSensorMessageToPhone(sensorMessage)
                 }
             }
         }
-
-        binding.sensorTextview.text = p0?.values?.get(0).toString()
     }
 
     /*
@@ -126,7 +130,11 @@ class MainWearActivity : FragmentActivity(), CapabilityClient.OnCapabilityChange
 
     private fun initSensor() {
         sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
-        mLight = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT)
+
+        accelerometerSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)
+        gyroscopeSensor = sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE)
+        temperatureSensor = sensorManager.getDefaultSensor(Sensor.TYPE_AMBIENT_TEMPERATURE)
+        lightSensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT)
     }
 
     private suspend fun checkIfPhoneHasApp() {
@@ -166,7 +174,16 @@ class MainWearActivity : FragmentActivity(), CapabilityClient.OnCapabilityChange
     }
 
     private fun registerSensorListeners() {
-        mLight?.also { light ->
+        accelerometerSensor?.also { accelerometer ->
+            sensorManager.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_NORMAL)
+        }
+        gyroscopeSensor?.also { gyroscope ->
+            sensorManager.registerListener(this, gyroscope, SensorManager.SENSOR_DELAY_NORMAL)
+        }
+        temperatureSensor?.also { temperature ->
+            sensorManager.registerListener(this, temperature, SensorManager.SENSOR_DELAY_NORMAL)
+        }
+        lightSensor?.also { light ->
             sensorManager.registerListener(this, light, SensorManager.SENSOR_DELAY_NORMAL)
         }
     }
@@ -189,6 +206,28 @@ class MainWearActivity : FragmentActivity(), CapabilityClient.OnCapabilityChange
                 ConfirmationOverlay()
                     .setType(ConfirmationOverlay.FAILURE_ANIMATION)
                     .showOn(this@MainWearActivity)
+            }
+        }
+    }
+
+    /*
+     * Send sensor message to phone through MessageClient.
+     */
+    private fun sendSensorMessageToPhone(sensorMessage: ByteArray) {
+        androidPhoneNodeWithApp?.id?.also { nodeId ->
+            Wearable.getMessageClient(this).sendMessage(
+                nodeId,
+                SENSOR_MESSAGE_PATH,
+                sensorMessage
+            ).apply {
+                addOnSuccessListener {
+                    // Message sent successfully with no errors
+                    Log.d("lombichh", "Message sent")
+                }
+                addOnFailureListener { exception ->
+                    // Message failed to send
+                    Log.d("lombichh", "Message failed: $exception")
+                }
             }
         }
     }

@@ -4,9 +4,12 @@ array android_wear_capabilities
 color colorAccent
 color colorPrimary
 color colorPrimaryDark
+id accelerometer_textview
+id gyroscope_textview
 id info_textview
+id light_textview
 id nestedScrollView
-id sensor_textview
+id temperature_textview
 layout activity_main
 mipmap ic_launcher
 string app_name

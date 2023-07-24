@@ -7,28 +7,69 @@
     android:layout_height="match_parent"
     android:fillViewport="true"
     android:orientation="vertical"
-    tools:context="com.example.wearablesensordata.MainMobileActivity" >
+    tools:context="com.example.wearablesensordata.MainMobileActivity">
 
     <TextView
         android:id="@+id/info_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:text="Info"
-        app:layout_constraintBottom_toTopOf="@+id/sensor_textview"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/sensor_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sensor"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/info_textview" />
+        app:layout_constraintTop_toBottomOf="@+id/info_textview"
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteX="63dp">
+
+        <TextView
+            android:id="@+id/accelerometer_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AccelerometerX: 0.0\nAccelerometerY: 0.0\nAccelerometerZ: 0.0"
+            app:layout_constraintBottom_toTopOf="@+id/gyroscope_textview"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/gyroscope_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GyroscopeX: 0.0\nGyroscopeY: 0.0\nGyroscopeZ: 0.0"
+            app:layout_constraintBottom_toTopOf="@+id/light_textview"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/accelerometer_textview" />
+
+        <TextView
+            android:id="@+id/temperature_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Temperature: 0.0"
+            app:layout_constraintBottom_toTopOf="@+id/light_textview"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gyroscope_textview" />
+
+        <TextView
+            android:id="@+id/light_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Light: 0.0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/temperature_textview" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

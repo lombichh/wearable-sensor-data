@@ -962,6 +962,7 @@ int id SHOW_PATH 0x7f090007
 int id SHOW_PROGRESS 0x7f090008
 int id SYM 0x7f090009
 int id accelerate 0x7f09000a
+int id accelerometer_textview 0x7f090143
 int id accessibility_action_clickable_span 0x7f09000b
 int id accessibility_custom_action_0 0x7f09000c
 int id accessibility_custom_action_1 0x7f09000d
@@ -1108,6 +1109,7 @@ int id graph_wrap 0x7f090099
 int id group_divider 0x7f09009a
 int id grouping 0x7f09009b
 int id groups 0x7f09009c
+int id gyroscope_textview 0x7f090144
 int id home 0x7f09009d
 int id homeAsUp 0x7f09009e
 int id honorRequest 0x7f09009f
@@ -1131,6 +1133,7 @@ int id layout 0x7f0900b0
 int id left 0x7f0900b1
 int id legacy 0x7f0900b2
 int id light 0x7f0900b3
+int id light_textview 0x7f090145
 int id line1 0x7f0900b4
 int id line3 0x7f0900b5
 int id linear 0x7f0900b6
@@ -1192,7 +1195,6 @@ int id search_plate 0x7f0900ed
 int id search_src_text 0x7f0900ee
 int id search_voice_btn 0x7f0900ef
 int id select_dialog_listview 0x7f0900f0
-int id sensor_textview 0x7f090142
 int id sharedValueSet 0x7f0900f1
 int id sharedValueUnset 0x7f0900f2
 int id shortcut 0x7f0900f3
@@ -1237,6 +1239,7 @@ int id tag_transition_group 0x7f090119
 int id tag_unhandled_key_event_manager 0x7f09011a
 int id tag_unhandled_key_listeners 0x7f09011b
 int id tag_window_insets_animation_callback 0x7f09011c
+int id temperature_textview 0x7f090146
 int id text 0x7f09011d
 int id text2 0x7f09011e
 int id textSpacerNoButtons 0x7f09011f

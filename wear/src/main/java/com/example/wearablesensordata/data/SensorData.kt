@@ -1,84 +1,154 @@
 package com.example.wearablesensordata.data
 
-class SensorData(location: FloatArray?, accelerometer: FloatArray?, gyroscope: FloatArray?,
-                 temperature: Float?, light: Float?) {
+import com.example.wearablesensordata.utils.DataConverter
 
-    var location: FloatArray? = location
-    var accelerometer: FloatArray? = accelerometer
-    var gyroscope: FloatArray? = gyroscope
-    var temperature: Float? = temperature
-    var light: Float? = light
+class SensorData {
 
     companion object {
-        /*
-         * Create byteArray from SensorData object
-         */
-        fun toByteArray(sensorData: SensorData): ByteArray {
+        const val LOCATION: Byte = 0
+        const val ACCELEROMETER: Byte = 1
+        const val GYROSCOPE: Byte = 2
+        const val TEMPERATURE: Byte = 3
+        const val LIGHT: Byte = 4
+
+        // Sensor values (Float) to sensor message (ByteArray)
+        fun locationValuesToSensorMessage(longitude: Float, latitude: Float): ByteArray {
+            val longitudeByteArray = DataConverter.floatToByteArray(longitude)
+            val latitudeByteArray = DataConverter.floatToByteArray(latitude)
+
             return byteArrayOf(
-                sensorData.location?.get(0)?.toInt()?.toByte() ?: 0,
-                sensorData.location?.get(1)?.toInt()?.toByte() ?: 0,
-                if (sensorData.location?.get(0) == null) 0 else 1,
-
-                sensorData.accelerometer?.get(0)?.toInt()?.toByte() ?: 0,
-                sensorData.accelerometer?.get(1)?.toInt()?.toByte() ?: 0,
-                sensorData.accelerometer?.get(2)?.toInt()?.toByte() ?: 0,
-                if (sensorData.accelerometer?.get(0) == null) 0 else 1,
-
-                sensorData.gyroscope?.get(0)?.toInt()?.toByte() ?: 0,
-                sensorData.gyroscope?.get(1)?.toInt()?.toByte() ?: 0,
-                sensorData.gyroscope?.get(2)?.toInt()?.toByte() ?: 0,
-                if (sensorData.gyroscope?.get(0) == null) 0 else 1,
-
-                sensorData.temperature?.toInt()?.toByte() ?: 0,
-                if (sensorData.temperature == null) 0 else 1,
-
-                sensorData.light?.toInt()?.toByte() ?: 0,
-                if (sensorData.light == null) 0 else 1
+                LOCATION,
+                longitudeByteArray[0],
+                longitudeByteArray[1],
+                longitudeByteArray[2],
+                longitudeByteArray[3],
+                latitudeByteArray[0],
+                latitudeByteArray[1],
+                latitudeByteArray[2],
+                latitudeByteArray[3]
             )
         }
 
-        /*
-         * Create SensorData object from byteArray values
-         */
-        fun fromByteArray(byteArray: ByteArray): SensorData {
+        fun accelerometerValuesToSensorMessage(
+            accelerometerX: Float,
+            accelerometerY: Float,
+            accelerometerZ: Float
+        ): ByteArray {
+            val accelerometerXByteArray = DataConverter.floatToByteArray(accelerometerX)
+            val accelerometerYByteArray = DataConverter.floatToByteArray(accelerometerY)
+            val accelerometerZByteArray = DataConverter.floatToByteArray(accelerometerZ)
 
-            var location: FloatArray? = null
+            return byteArrayOf(
+                ACCELEROMETER,
+                accelerometerXByteArray[0],
+                accelerometerXByteArray[1],
+                accelerometerXByteArray[2],
+                accelerometerXByteArray[3],
+                accelerometerYByteArray[0],
+                accelerometerYByteArray[1],
+                accelerometerYByteArray[2],
+                accelerometerYByteArray[3],
+                accelerometerZByteArray[0],
+                accelerometerZByteArray[1],
+                accelerometerZByteArray[2],
+                accelerometerZByteArray[3]
+            )
+        }
 
-            if (byteArray.get(2) == 1.toByte()) {
-                location = FloatArray(2)
-                location[0] = byteArray.get(0).toFloat()
-                location[1] = byteArray.get(1).toFloat()
-            }
+        fun gyroscopeValuesToSensorMessage(
+            gyroscopeX: Float,
+            gyroscopeY: Float,
+            gyroscopeZ: Float
+        ): ByteArray {
+            val gyroscopeXByteArray = DataConverter.floatToByteArray(gyroscopeX)
+            val gyroscopeYByteArray = DataConverter.floatToByteArray(gyroscopeY)
+            val gyroscopeZByteArray = DataConverter.floatToByteArray(gyroscopeZ)
 
-            var accelerometer: FloatArray? = null
+            return byteArrayOf(
+                GYROSCOPE,
+                gyroscopeXByteArray[0],
+                gyroscopeXByteArray[1],
+                gyroscopeXByteArray[2],
+                gyroscopeXByteArray[3],
+                gyroscopeYByteArray[0],
+                gyroscopeYByteArray[1],
+                gyroscopeYByteArray[2],
+                gyroscopeYByteArray[3],
+                gyroscopeZByteArray[0],
+                gyroscopeZByteArray[1],
+                gyroscopeZByteArray[2],
+                gyroscopeZByteArray[3]
+            )
+        }
 
-            if (byteArray.get(6) == 1.toByte()) {
-                accelerometer = FloatArray(3)
-                accelerometer[0] = byteArray.get(3).toFloat()
-                accelerometer[1] = byteArray.get(4).toFloat()
-                accelerometer[2] = byteArray.get(5).toFloat()
-            }
+        fun temperatureValueToSensorMessage(temperature: Float): ByteArray {
+            val temperatureByteArray = DataConverter.floatToByteArray(temperature)
 
-            var gyroscope: FloatArray? = null
+            return byteArrayOf(
+                TEMPERATURE,
+                temperatureByteArray[0],
+                temperatureByteArray[1],
+                temperatureByteArray[2],
+                temperatureByteArray[3]
+            )
+        }
 
-            if (byteArray.get(10) == 1.toByte()) {
-                gyroscope = FloatArray(3)
-                gyroscope[0] = byteArray.get(7).toFloat()
-                gyroscope[1] = byteArray.get(8).toFloat()
-                gyroscope[2] = byteArray.get(9).toFloat()
-            }
+        fun lightValueToSensorMessage(light: Float): ByteArray {
+            val lightByteArray = DataConverter.floatToByteArray(light)
 
-            var temperature: Float? = null
+            return byteArrayOf(
+                LIGHT,
+                lightByteArray[0],
+                lightByteArray[1],
+                lightByteArray[2],
+                lightByteArray[3]
+            )
+        }
 
-            if (byteArray.get(12) == 1.toByte())
-                temperature = byteArray.get(11).toFloat()
+        // Sensor message (ByteArray) to sensor values (Float)
+        fun sensorMessageToLocationValues(sensorMessage: ByteArray): FloatArray {
+            val longitudeValue =
+                DataConverter.byteArrayToFloat(sensorMessage.copyOfRange(1, 5))
+            val latitudeValue =
+                DataConverter.byteArrayToFloat(sensorMessage.copyOfRange(5, 9))
 
-            var light: Float? = null
+            return floatArrayOf(longitudeValue, latitudeValue)
+        }
 
-            if (byteArray.get(14) == 1.toByte())
-                light = byteArray.get(13).toFloat()
+        fun sensorMessageToAccelerometerValues(sensorMessage: ByteArray): FloatArray {
+            val accelerometerX =
+                DataConverter.byteArrayToFloat(sensorMessage.copyOfRange(1, 5))
+            val accelerometerY =
+                DataConverter.byteArrayToFloat(sensorMessage.copyOfRange(5, 9))
+            val accelerometerZ =
+                DataConverter.byteArrayToFloat(sensorMessage.copyOfRange(9, 13))
 
-            return SensorData(location, accelerometer, gyroscope, temperature, light)
+            return floatArrayOf(accelerometerX, accelerometerY, accelerometerZ)
+        }
+
+        fun sensorMessageToGyroscopeValues(sensorMessage: ByteArray): FloatArray {
+            val gyroscopeX =
+                DataConverter.byteArrayToFloat(sensorMessage.copyOfRange(1, 5))
+            val gyroscopeY =
+                DataConverter.byteArrayToFloat(sensorMessage.copyOfRange(5, 9))
+            val gyroscopeZ =
+                DataConverter.byteArrayToFloat(sensorMessage.copyOfRange(9, 13))
+
+            return floatArrayOf(gyroscopeX, gyroscopeY, gyroscopeZ)
+        }
+
+        fun sensorMessageToTemperatureValue(sensorMessage: ByteArray): Float {
+            val temperatureValue =
+                DataConverter.byteArrayToFloat(sensorMessage.copyOfRange(1, 5))
+
+            return temperatureValue
+        }
+
+        fun sensorMessageToLightValues(sensorMessage: ByteArray): Float {
+            val lightValue =
+                DataConverter.byteArrayToFloat(sensorMessage.copyOfRange(1, 5))
+
+            return lightValue
         }
     }
 
