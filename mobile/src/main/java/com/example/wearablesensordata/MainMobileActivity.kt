@@ -77,7 +77,7 @@ class MainMobileActivity : AppCompatActivity(), OnCapabilityChangedListener,
      */
     override fun onMessageReceived(p0: MessageEvent) {
         if (p0.path == SENSOR_MESSAGE_PATH) {
-            binding.sensorTextview.text = String(p0.data)
+            binding.sensorTextview.text = p0.data[13].toString()
         }
     }
 

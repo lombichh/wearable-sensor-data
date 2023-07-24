@@ -13,6 +13,7 @@ import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.wear.remote.interactions.RemoteActivityHelper
 import androidx.wear.widget.ConfirmationOverlay
+import com.example.wearablesensordata.data.SensorData
 import com.example.wearablesensordata.databinding.ActivityMainBinding
 import com.google.android.gms.tasks.Task
 import com.google.android.gms.wearable.CapabilityClient
@@ -83,20 +84,29 @@ class MainWearActivity : FragmentActivity(), CapabilityClient.OnCapabilityChange
      * When sensor data changes.
      */
     override fun onSensorChanged(p0: SensorEvent?) {
+        // Create SensorData object
+        val sensorData = SensorData(
+            null,
+            null,
+            null,
+            null,
+            p0?.values?.get(0)
+        )
+
         // Send sensor data to phone through MessageClient
         androidPhoneNodeWithApp?.id?.also { nodeId ->
             val sendTask: Task<*> = Wearable.getMessageClient(this).sendMessage(
                 nodeId,
                 SENSOR_MESSAGE_PATH,
-                p0?.values?.get(0).toString()?.toByteArray()
+                SensorData.toByteArray(sensorData)
             ).apply {
                 addOnSuccessListener {
                     // Message sent successfully with no errors
                     Log.d("lombichh", "Message sent")
                 }
-                addOnFailureListener {
+                addOnFailureListener { exception ->
                     // Message failed to send
-                    Log.d("lombichh", "Message failed")
+                    Log.d("lombichh", "Message failed: $exception")
                 }
             }
         }
