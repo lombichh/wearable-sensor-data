@@ -84,18 +84,23 @@ class MainMobileActivity : AppCompatActivity(), OnCapabilityChangedListener,
                 SensorData.ACCELEROMETER -> {
                     val accelerometerValues =
                         SensorData.sensorMessageToAccelerometerValues(p0.data)
-                    binding.accelerometerTextview.text = "AccelerometerX: ${accelerometerValues[0]}\nAccelerometerY: ${accelerometerValues[1]}\nAccelerometerZ: ${accelerometerValues[2]}"
+                    binding.accelerometerTextview.text =
+                        "AccelerometerX: ${accelerometerValues[0]}\nAccelerometerY: ${accelerometerValues[1]}\nAccelerometerZ: ${accelerometerValues[2]}"
                 }
+
                 SensorData.GYROSCOPE -> {
                     val gyroscopeValues =
                         SensorData.sensorMessageToGyroscopeValues(p0.data)
-                    binding.gyroscopeTextview.text = "GyroscopeX: ${gyroscopeValues[0]}\nGyroscopeY: ${gyroscopeValues[1]}\nGyroscopeZ: ${gyroscopeValues[2]}"
+                    binding.gyroscopeTextview.text =
+                        "GyroscopeX: ${gyroscopeValues[0]}\nGyroscopeY: ${gyroscopeValues[1]}\nGyroscopeZ: ${gyroscopeValues[2]}"
                 }
+
                 SensorData.TEMPERATURE -> {
                     val temperatureValue =
                         SensorData.sensorMessageToTemperatureValue(p0.data)
                     binding.temperatureTextview.text = "Temperature: $temperatureValue"
                 }
+
                 SensorData.LIGHT -> {
                     val lightValue =
                         SensorData.sensorMessageToLightValue(p0.data)
@@ -168,18 +173,21 @@ class MainMobileActivity : AppCompatActivity(), OnCapabilityChangedListener,
                 // Waiting on Results for both connected nodes and nodes with app
                 binding.infoTextview.text = getString(R.string.message_checking)
             }
+
             allConnectedNodes.isEmpty() -> {
                 // No devices connected
                 binding.infoTextview.text = getString(R.string.message_checking)
 
                 Wearable.getMessageClient(this).removeListener(this)
             }
+
             connectedNodesWithApp.isEmpty() -> {
                 // Missing on all devices
                 binding.infoTextview.text = getString(R.string.message_missing_all)
 
                 Wearable.getMessageClient(this).removeListener(this)
             }
+
             connectedNodesWithApp.size < allConnectedNodes.size -> {
                 // Installed on some devices
                 binding.infoTextview.text =
@@ -187,6 +195,7 @@ class MainMobileActivity : AppCompatActivity(), OnCapabilityChangedListener,
 
                 Wearable.getMessageClient(this).addListener(this)
             }
+
             else -> {
                 // Installed on all devices
                 binding.infoTextview.text =

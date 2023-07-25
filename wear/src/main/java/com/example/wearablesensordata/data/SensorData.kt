@@ -5,6 +5,8 @@ import com.example.wearablesensordata.utils.DataConverter
 class SensorData {
 
     companion object {
+        const val SENSOR_MESSAGE_MINIMUM_INTERVAL = 50000000
+
         const val LOCATION: Byte = 0
         const val ACCELEROMETER: Byte = 1
         const val GYROSCOPE: Byte = 2

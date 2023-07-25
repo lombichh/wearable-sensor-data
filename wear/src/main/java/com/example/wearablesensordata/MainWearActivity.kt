@@ -43,6 +43,11 @@ class MainWearActivity : FragmentActivity(), CapabilityClient.OnCapabilityChange
     private var temperatureSensor: Sensor? = null
     private var lightSensor: Sensor? = null
 
+    private var lastAccelerometerUpdateTimestamp: Long? = null
+    private var lastGyroscopeUpdateTimestamp: Long? = null
+    private var lastTemperatureUpdateTimestamp: Long? = null
+    private var lastLightUpdateTimestamp: Long? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -91,28 +96,71 @@ class MainWearActivity : FragmentActivity(), CapabilityClient.OnCapabilityChange
             // and send it to the phone.
             when (p0.sensor.type) {
                 Sensor.TYPE_ACCELEROMETER -> {
-                    val sensorMessage = SensorData.accelerometerValuesToSensorMessage(
-                        p0.values[0],
-                        p0.values[1],
-                        p0.values[2]
-                    )
-                    sendSensorMessageToPhone(sensorMessage)
+                    // Check if last sensor update was sent more than INTERVAL second ago.
+                    val actualTimestamp = p0.timestamp
+
+                    if (lastAccelerometerUpdateTimestamp == null ||
+                        actualTimestamp - lastAccelerometerUpdateTimestamp!!
+                        >= SensorData.SENSOR_MESSAGE_MINIMUM_INTERVAL
+                    ) {
+                        val sensorMessage = SensorData.accelerometerValuesToSensorMessage(
+                            p0.values[0],
+                            p0.values[1],
+                            p0.values[2]
+                        )
+                        sendSensorMessageToPhone(sensorMessage)
+
+                        lastAccelerometerUpdateTimestamp = actualTimestamp
+                    }
                 }
+
                 Sensor.TYPE_GYROSCOPE -> {
-                    val sensorMessage = SensorData.gyroscopeValuesToSensorMessage(
-                        p0.values[0],
-                        p0.values[1],
-                        p0.values[2]
-                    )
-                    sendSensorMessageToPhone(sensorMessage)
+                    // Check if last sensor update was sent more than INTERVAL second ago.
+                    val actualTime = p0.timestamp
+
+                    if (lastGyroscopeUpdateTimestamp == null ||
+                        actualTime - lastGyroscopeUpdateTimestamp!!
+                        >= SensorData.SENSOR_MESSAGE_MINIMUM_INTERVAL
+                    ) {
+                        val sensorMessage = SensorData.gyroscopeValuesToSensorMessage(
+                            p0.values[0],
+                            p0.values[1],
+                            p0.values[2]
+                        )
+                        sendSensorMessageToPhone(sensorMessage)
+
+                        lastGyroscopeUpdateTimestamp = actualTime
+                    }
                 }
+
                 Sensor.TYPE_AMBIENT_TEMPERATURE -> {
-                    val sensorMessage = SensorData.temperatureValueToSensorMessage(p0.values[0])
-                    sendSensorMessageToPhone(sensorMessage)
+                    // Check if last sensor update was sent more than INTERVAL second ago.
+                    val actualTime = p0.timestamp
+
+                    if (lastTemperatureUpdateTimestamp == null ||
+                        actualTime - lastTemperatureUpdateTimestamp!!
+                        >= SensorData.SENSOR_MESSAGE_MINIMUM_INTERVAL
+                    ) {
+                        val sensorMessage = SensorData.temperatureValueToSensorMessage(p0.values[0])
+                        sendSensorMessageToPhone(sensorMessage)
+
+                        lastTemperatureUpdateTimestamp = actualTime
+                    }
                 }
+
                 Sensor.TYPE_LIGHT -> {
-                    val sensorMessage = SensorData.lightValueToSensorMessage(p0.values[0])
-                    sendSensorMessageToPhone(sensorMessage)
+                    // Check if last sensor update was sent more than INTERVAL second ago.
+                    val actualTime = p0.timestamp
+
+                    if (lastLightUpdateTimestamp == null ||
+                        actualTime - lastLightUpdateTimestamp!!
+                        >= SensorData.SENSOR_MESSAGE_MINIMUM_INTERVAL
+                    ) {
+                        val sensorMessage = SensorData.lightValueToSensorMessage(p0.values[0])
+                        sendSensorMessageToPhone(sensorMessage)
+
+                        lastLightUpdateTimestamp = actualTime
+                    }
                 }
             }
         }
@@ -241,7 +289,6 @@ class MainWearActivity : FragmentActivity(), CapabilityClient.OnCapabilityChange
         private const val PLAY_STORE_APP_URI =
             "market://details?id=com.example.wearablesensordata"
 
-        // Sensor message path
         private const val SENSOR_MESSAGE_PATH = "/sensor"
     }
 }

@@ -109,9 +109,9 @@ ADDED from C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSenso
 activity#com.example.wearablesensordata.MainWearActivity
 ADDED from C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\wear\src\main\AndroidManifest.xml:18:9-26:20
 	android:label
-		ADDED from C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\wear\src\main\AndroidManifest.xml:20:13-45
+		ADDED from C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\wear\src\main\AndroidManifest.xml:21:13-45
 	android:exported
-		ADDED from C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\wear\src\main\AndroidManifest.xml:21:13-36
+		ADDED from C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\wear\src\main\AndroidManifest.xml:20:13-36
 	android:name
 		ADDED from C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\wear\src\main\AndroidManifest.xml:19:13-75
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER

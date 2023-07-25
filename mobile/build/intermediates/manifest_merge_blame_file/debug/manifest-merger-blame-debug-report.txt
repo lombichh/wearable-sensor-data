@@ -22,9 +22,9 @@
 15-->[androidx.core:core:1.10.1] C:\Users\ASUS\.gradle\caches\transforms-3\6507ddaee3b678184fb79c388f30e631\transformed\core-1.10.1\AndroidManifest.xml:26:22-94
 16
 17    <application
-17-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\mobile\src\main\AndroidManifest.xml:7:5-21:19
+17-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\mobile\src\main\AndroidManifest.xml:7:5-22:19
 18        android:allowBackup="true"
-18-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\mobile\src\main\AndroidManifest.xml:7:18-44
+18-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\mobile\src\main\AndroidManifest.xml:8:9-35
 19        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 19-->[androidx.core:core:1.10.1] C:\Users\ASUS\.gradle\caches\transforms-3\6507ddaee3b678184fb79c388f30e631\transformed\core-1.10.1\AndroidManifest.xml:28:18-86
 20        android:debuggable="true"
@@ -32,25 +32,25 @@
 22        android:icon="@mipmap/ic_launcher"
 22-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\mobile\src\main\AndroidManifest.xml:9:9-43
 23        android:label="@string/app_name"
-23-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\mobile\src\main\AndroidManifest.xml:8:9-41
+23-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\mobile\src\main\AndroidManifest.xml:10:9-41
 24        android:testOnly="true"
 25        android:theme="@style/AppThemeCustom" >
-25-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\mobile\src\main\AndroidManifest.xml:10:9-46
+25-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\mobile\src\main\AndroidManifest.xml:11:9-46
 26        <activity
-26-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\mobile\src\main\AndroidManifest.xml:12:9-19:20
+26-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\mobile\src\main\AndroidManifest.xml:13:9-20:20
 27            android:name="com.example.wearablesensordata.MainMobileActivity"
-27-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\mobile\src\main\AndroidManifest.xml:13:13-77
+27-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\mobile\src\main\AndroidManifest.xml:14:13-77
 28            android:exported="true" >
-28-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\mobile\src\main\AndroidManifest.xml:14:13-36
+28-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\mobile\src\main\AndroidManifest.xml:15:13-36
 29            <intent-filter>
-29-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\mobile\src\main\AndroidManifest.xml:15:13-18:29
+29-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\mobile\src\main\AndroidManifest.xml:16:13-19:29
 30                <action android:name="android.intent.action.MAIN" />
-30-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\mobile\src\main\AndroidManifest.xml:16:17-68
-30-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\mobile\src\main\AndroidManifest.xml:16:25-66
+30-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\mobile\src\main\AndroidManifest.xml:17:17-69
+30-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\mobile\src\main\AndroidManifest.xml:17:25-66
 31
 32                <category android:name="android.intent.category.LAUNCHER" />
-32-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\mobile\src\main\AndroidManifest.xml:17:17-76
-32-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\mobile\src\main\AndroidManifest.xml:17:27-74
+32-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\mobile\src\main\AndroidManifest.xml:18:17-77
+32-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\mobile\src\main\AndroidManifest.xml:18:27-74
 33            </intent-filter>
 34        </activity>
 35        <activity

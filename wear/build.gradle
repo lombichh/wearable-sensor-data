@@ -15,44 +15,44 @@
  */
 
 plugins {
-    id 'com.android.application'
-    id 'org.jetbrains.kotlin.android'
+  id 'com.android.application'
+  id 'org.jetbrains.kotlin.android'
 }
 
 android {
-    compileSdkVersion 33
+  compileSdkVersion 33
 
-    namespace "com.example.wearablesensordata"
+  namespace "com.example.wearablesensordata"
 
-    defaultConfig {
-        versionCode 1
-        versionName "1.0"
-        minSdk 26
-        targetSdk 30
-    }
+  defaultConfig {
+    versionCode 1
+    versionName "1.0"
+    minSdk 26
+    targetSdk 30
+  }
 
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
-    }
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_17
+    targetCompatibility JavaVersion.VERSION_17
+  }
 
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_17.majorVersion
-    }
+  kotlinOptions {
+    jvmTarget = JavaVersion.VERSION_17.majorVersion
+  }
 
-    buildFeatures {
-        viewBinding true
-    }
+  buildFeatures {
+    viewBinding true
+  }
 }
 
 dependencies {
-    implementation libs.kotlinx.coroutines.android
-    implementation libs.kotlinx.coroutines.play.services
-    implementation libs.androidx.activity.ktx
-    implementation libs.androidx.constraintlayout
-    implementation libs.androidx.core.ktx
-    implementation libs.androidx.wear
-    implementation libs.wear.phone.interactions
-    implementation libs.wear.remote.interactions
-    implementation libs.playservices.wearable
+  implementation libs.kotlinx.coroutines.android
+  implementation libs.kotlinx.coroutines.play.services
+  implementation libs.androidx.activity.ktx
+  implementation libs.androidx.constraintlayout
+  implementation libs.androidx.core.ktx
+  implementation libs.androidx.wear
+  implementation libs.wear.phone.interactions
+  implementation libs.wear.remote.interactions
+  implementation libs.playservices.wearable
 }

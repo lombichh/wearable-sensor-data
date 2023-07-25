@@ -1,18 +1,18 @@
-#Mon Jul 24 17:28:19 CEST 2023
+#Tue Jul 25 14:53:31 CEST 2023
 base.0=C\:\\Users\\ASUS\\Desktop\\Projects\\Coding\\Java\\Android\\Work\\WearableSensorData\\mobile\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=C\:\\Users\\ASUS\\Desktop\\Projects\\Coding\\Java\\Android\\Work\\WearableSensorData\\mobile\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
 base.2=C\:\\Users\\ASUS\\Desktop\\Projects\\Coding\\Java\\Android\\Work\\WearableSensorData\\mobile\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\10\\classes.dex
 base.3=C\:\\Users\\ASUS\\Desktop\\Projects\\Coding\\Java\\Android\\Work\\WearableSensorData\\mobile\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\12\\classes.dex
-base.4=C\:\\Users\\ASUS\\Desktop\\Projects\\Coding\\Java\\Android\\Work\\WearableSensorData\\mobile\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
-base.5=C\:\\Users\\ASUS\\Desktop\\Projects\\Coding\\Java\\Android\\Work\\WearableSensorData\\mobile\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\2\\classes.dex
-base.6=C\:\\Users\\ASUS\\Desktop\\Projects\\Coding\\Java\\Android\\Work\\WearableSensorData\\mobile\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\7\\classes.dex
+base.4=C\:\\Users\\ASUS\\Desktop\\Projects\\Coding\\Java\\Android\\Work\\WearableSensorData\\mobile\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\2\\classes.dex
+base.5=C\:\\Users\\ASUS\\Desktop\\Projects\\Coding\\Java\\Android\\Work\\WearableSensorData\\mobile\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\7\\classes.dex
+base.6=C\:\\Users\\ASUS\\Desktop\\Projects\\Coding\\Java\\Android\\Work\\WearableSensorData\\mobile\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=10/classes.dex
 path.3=12/classes.dex
-path.4=classes2.dex
-path.5=2/classes.dex
-path.6=7/classes.dex
+path.4=2/classes.dex
+path.5=7/classes.dex
+path.6=classes2.dex
 renamed.0=classes.dex
 renamed.1=classes2.dex
 renamed.2=classes3.dex
