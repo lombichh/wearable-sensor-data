@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.wearablesensordata.mobile-mergeDebugResources-29:/values-et/values-et.xml",
+            "outputFile": "com.example.wearablesensordata.mobile-mergeDebugResources-30:/values-et/values-et.xml",
             "map": [
                 {
                     "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\c2136152f9f15253b8fd8aeda70399e1\\transformed\\jetified-play-services-basement-18.0.0\\res\\values-et\\values.xml",

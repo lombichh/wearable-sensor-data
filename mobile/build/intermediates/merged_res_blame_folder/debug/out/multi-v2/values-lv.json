@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.wearablesensordata.mobile-mergeDebugResources-29:/values-lv/values-lv.xml",
+            "outputFile": "com.example.wearablesensordata.mobile-mergeDebugResources-30:/values-lv/values-lv.xml",
             "map": [
                 {
                     "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\552c19b915a356761bb75394ffcb32f3\\transformed\\appcompat-1.6.1\\res\\values-lv\\values-lv.xml",

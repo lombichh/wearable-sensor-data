@@ -20,34 +20,25 @@ public final class ActivityMainBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final TextView accelerometerTextview;
-
-  @NonNull
-  public final TextView gyroscopeTextview;
-
-  @NonNull
-  public final TextView infoTextview;
-
-  @NonNull
-  public final TextView lightTextview;
-
-  @NonNull
   public final ConstraintLayout nestedScrollView;
 
   @NonNull
-  public final TextView temperatureTextview;
+  public final TextView titleTextview1;
+
+  @NonNull
+  public final TextView titleTextview2;
+
+  @NonNull
+  public final TextView titleTextview3;
 
   private ActivityMainBinding(@NonNull ConstraintLayout rootView,
-      @NonNull TextView accelerometerTextview, @NonNull TextView gyroscopeTextview,
-      @NonNull TextView infoTextview, @NonNull TextView lightTextview,
-      @NonNull ConstraintLayout nestedScrollView, @NonNull TextView temperatureTextview) {
+      @NonNull ConstraintLayout nestedScrollView, @NonNull TextView titleTextview1,
+      @NonNull TextView titleTextview2, @NonNull TextView titleTextview3) {
     this.rootView = rootView;
-    this.accelerometerTextview = accelerometerTextview;
-    this.gyroscopeTextview = gyroscopeTextview;
-    this.infoTextview = infoTextview;
-    this.lightTextview = lightTextview;
     this.nestedScrollView = nestedScrollView;
-    this.temperatureTextview = temperatureTextview;
+    this.titleTextview1 = titleTextview1;
+    this.titleTextview2 = titleTextview2;
+    this.titleTextview3 = titleTextview3;
   }
 
   @Override
@@ -77,40 +68,28 @@ public final class ActivityMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.accelerometer_textview;
-      TextView accelerometerTextview = ViewBindings.findChildViewById(rootView, id);
-      if (accelerometerTextview == null) {
-        break missingId;
-      }
-
-      id = R.id.gyroscope_textview;
-      TextView gyroscopeTextview = ViewBindings.findChildViewById(rootView, id);
-      if (gyroscopeTextview == null) {
-        break missingId;
-      }
-
-      id = R.id.info_textview;
-      TextView infoTextview = ViewBindings.findChildViewById(rootView, id);
-      if (infoTextview == null) {
-        break missingId;
-      }
-
-      id = R.id.light_textview;
-      TextView lightTextview = ViewBindings.findChildViewById(rootView, id);
-      if (lightTextview == null) {
-        break missingId;
-      }
-
       ConstraintLayout nestedScrollView = (ConstraintLayout) rootView;
 
-      id = R.id.temperature_textview;
-      TextView temperatureTextview = ViewBindings.findChildViewById(rootView, id);
-      if (temperatureTextview == null) {
+      id = R.id.title_textview1;
+      TextView titleTextview1 = ViewBindings.findChildViewById(rootView, id);
+      if (titleTextview1 == null) {
         break missingId;
       }
 
-      return new ActivityMainBinding((ConstraintLayout) rootView, accelerometerTextview,
-          gyroscopeTextview, infoTextview, lightTextview, nestedScrollView, temperatureTextview);
+      id = R.id.title_textview2;
+      TextView titleTextview2 = ViewBindings.findChildViewById(rootView, id);
+      if (titleTextview2 == null) {
+        break missingId;
+      }
+
+      id = R.id.title_textview3;
+      TextView titleTextview3 = ViewBindings.findChildViewById(rootView, id);
+      if (titleTextview3 == null) {
+        break missingId;
+      }
+
+      return new ActivityMainBinding((ConstraintLayout) rootView, nestedScrollView, titleTextview1,
+          titleTextview2, titleTextview3);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

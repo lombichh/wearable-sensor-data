@@ -39,4 +39,6 @@ dependencies {
   implementation libs.androidx.lifecycle.runtime.ktx
   implementation libs.wear.remote.interactions
   implementation libs.playservices.wearable
+
+  implementation 'com.google.android.flexbox:flexbox:3.0.0'
 }

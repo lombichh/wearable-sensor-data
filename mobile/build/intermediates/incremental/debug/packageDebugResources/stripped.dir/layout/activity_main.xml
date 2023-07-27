@@ -9,67 +9,68 @@
     android:orientation="vertical"
     tools:context="com.example.wearablesensordata.MainMobileActivity">
 
-    <TextView
-        android:id="@+id/info_textview"
+    <com.google.android.flexbox.FlexboxLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:text="Info"
+        android:orientation="horizontal"
+        app:alignItems="center"
+        app:flexWrap="wrap"
+        app:justifyContent="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/info_textview"
-        app:layout_constraintVertical_bias="1.0"
-        tools:layout_editor_absoluteX="63dp">
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/accelerometer_textview"
+            android:id="@+id/title_textview1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="AccelerometerX: 0.0\nAccelerometerY: 0.0\nAccelerometerZ: 0.0"
-            app:layout_constraintBottom_toTopOf="@+id/gyroscope_textview"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:fontFamily="@font/sofia_pro_light"
+            android:includeFontPadding="false"
+            android:text="@string/title_main_activity_1"
+            android:textColor="@android:color/black"
+            android:textSize="32sp" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:layout_marginEnd="7dp">
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:src="@drawable/rounded_rectangle" />
+
+            <TextView
+                android:id="@+id/title_textview2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/sofia_pro_medium"
+                android:includeFontPadding="false"
+                android:text="@string/sensor"
+                android:textColor="@android:color/white"
+                android:textSize="32sp" />
+
+        </FrameLayout>
+
+        <!-- Lines divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5dp" />
 
         <TextView
-            android:id="@+id/gyroscope_textview"
+            android:id="@+id/title_textview3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="GyroscopeX: 0.0\nGyroscopeY: 0.0\nGyroscopeZ: 0.0"
-            app:layout_constraintBottom_toTopOf="@+id/light_textview"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/accelerometer_textview" />
+            android:fontFamily="@font/sofia_pro_light"
+            android:includeFontPadding="false"
+            android:text="@string/title_main_activity_2"
+            android:textColor="@android:color/black"
+            android:textSize="32sp" />
 
-        <TextView
-            android:id="@+id/temperature_textview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Temperature: 0.0"
-            app:layout_constraintBottom_toTopOf="@+id/light_textview"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/gyroscope_textview" />
-
-        <TextView
-            android:id="@+id/light_textview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Light: 0.0"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/temperature_textview" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.flexbox.FlexboxLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
