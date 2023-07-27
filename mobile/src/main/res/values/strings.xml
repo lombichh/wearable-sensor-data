@@ -13,13 +13,18 @@
     <string name="message_missing_all">Welcome to our Mobile app!\n\nYou are missing the Wear app on all your Wear Devices, please click on the button below to install it on those device(s).</string>
     <string name="message_some_installed">Welcome to our Mobile app!\n\nWear app installed on some your device(s) (%1$s)!\n\nYou can now use the MessageClient, DataClient, etc.\n\nTo install the Wear app on the other devices, please click on the button below.</string>
     <string name="message_all_installed">Welcome to our Mobile app!\n\nWear app installed on all your devices (%1$s)!\n\nYou can now use the MessageClient, DataClient, etc.</string>
-    <string name="install_app">Install App on Wear device(s)</string>
-    <string name="store_request_successful">Play Store Request to Wear device successful.</string>
-    <string name="store_request_unsuccessful">Play Store Request Failed. Wear device(s) may not support Play Store, that is, the Wear device may be version 1.0.</string>
+    <string name="store_request_successful">Check the smartwatch</string>
     <string name="accelerometer_title">Accelerometer (m/s\u00B2)</string>
     <string name="gyroscope_title">Gyroscope (rad/s)</string>
     <string name="temperature">Temperature</string>
     <string name="celsius_degrees">\u00B0C</string>
     <string name="light">Light</string>
     <string name="lux">Lux</string>
+    <string name="x_axis">x-axis</string>
+    <string name="y_axis">y-axis</string>
+    <string name="z_axis">z-axis</string>
+    <string name="zero">0</string>
+    <string name="looking_for_paired_wearables">Looking for paired wearables...</string>
+    <string name="wearable_connected_without_app">%s connected without app</string>
+    <string name="install_app">Install app</string>
 </resources>

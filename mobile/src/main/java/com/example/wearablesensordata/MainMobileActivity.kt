@@ -1,21 +1,11 @@
 package com.example.wearablesensordata
 
 import android.content.Intent
-import android.graphics.Typeface
-import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.os.Bundle
-import android.text.SpannableStringBuilder
-import android.text.Spanned
-import android.text.style.BackgroundColorSpan
-import android.text.style.ForegroundColorSpan
-import android.text.style.ImageSpan
-import android.text.style.StyleSpan
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
-import androidx.core.content.res.ResourcesCompat
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
@@ -130,7 +120,14 @@ class MainMobileActivity : AppCompatActivity(), OnCapabilityChangedListener,
     }
 
     private fun initUi() {
+        binding.checkingPairedWearablesLayout.setOnClickListener {
+            // Remove possibility to scroll dashboard while checking pairing state
+            binding.dashboardScrollview.requestDisallowInterceptTouchEvent(true)
+        }
 
+        binding.installAppButton.setOnClickListener {
+            openPlayStoreOnWearDevicesWithoutApp()
+        }
     }
 
     private fun initWearAPIs() {
@@ -195,27 +192,52 @@ class MainMobileActivity : AppCompatActivity(), OnCapabilityChangedListener,
             connectedNodesWithApp == null || allConnectedNodes == null -> {
                 // Waiting on Results for both connected nodes and nodes with app
                 binding.deviceConnectedLayout.visibility = View.GONE
+
+                binding.connectedDeviceWithoutAppTextview.visibility = View.GONE
+                binding.installAppButton.visibility = View.GONE
+                binding.checkingPairedWearablesProgressbar.visibility = View.VISIBLE
+                binding.checkingPairedWearablesTextview.visibility = View.VISIBLE
+                binding.checkingPairedWearablesLayout.visibility = View.VISIBLE
             }
 
             allConnectedNodes.isEmpty() -> {
                 // No devices connected
                 Wearable.getMessageClient(this).removeListener(this)
 
+                // Update ui
                 binding.deviceConnectedLayout.visibility = View.GONE
+
+                binding.connectedDeviceWithoutAppTextview.visibility = View.GONE
+                binding.installAppButton.visibility = View.GONE
+                binding.checkingPairedWearablesProgressbar.visibility = View.VISIBLE
+                binding.checkingPairedWearablesTextview.visibility = View.VISIBLE
+                binding.checkingPairedWearablesLayout.visibility = View.VISIBLE
             }
 
             connectedNodesWithApp.isEmpty() -> {
                 // Missing on all devices
                 Wearable.getMessageClient(this).removeListener(this)
 
+                // Update ui
                 binding.deviceConnectedLayout.visibility = View.GONE
+
+                binding.connectedDeviceWithoutAppTextview.text =
+                    getString(
+                        R.string.wearable_connected_without_app,
+                        allConnectedNodes.firstOrNull()?.displayName
+                    )
+                binding.checkingPairedWearablesProgressbar.visibility = View.GONE
+                binding.checkingPairedWearablesTextview.visibility = View.GONE
+                binding.connectedDeviceWithoutAppTextview.visibility = View.VISIBLE
+                binding.installAppButton.visibility = View.VISIBLE
+                binding.checkingPairedWearablesLayout.visibility = View.VISIBLE
             }
 
             connectedNodesWithApp.size < allConnectedNodes.size -> {
                 // Installed on some devices
                 Wearable.getMessageClient(this).addListener(this)
 
-                // Update connected device textview
+                // Update ui
                 connectedNodesWithApp.firstOrNull()?.let {
                     binding.deviceConnectedTextview.text = getString(
                         R.string.message_device_connected,
@@ -223,6 +245,8 @@ class MainMobileActivity : AppCompatActivity(), OnCapabilityChangedListener,
                     )
                     binding.deviceConnectedLayout.visibility = View.VISIBLE
                 }
+
+                binding.checkingPairedWearablesLayout.visibility = View.GONE
             }
 
             else -> {
@@ -236,8 +260,9 @@ class MainMobileActivity : AppCompatActivity(), OnCapabilityChangedListener,
                         it.displayName
                     )
                     binding.deviceConnectedLayout.visibility = View.VISIBLE
-
                 }
+
+                binding.checkingPairedWearablesLayout.visibility = View.GONE
             }
         }
     }
@@ -270,11 +295,7 @@ class MainMobileActivity : AppCompatActivity(), OnCapabilityChangedListener,
                 } catch (cancellationException: CancellationException) {
                     // Request was cancelled normally
                 } catch (throwable: Throwable) {
-                    Toast.makeText(
-                        this@MainMobileActivity,
-                        getString(R.string.store_request_unsuccessful),
-                        Toast.LENGTH_LONG
-                    ).show()
+                    // Request failed to start remote activity
                 }
             }
         }

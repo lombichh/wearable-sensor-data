@@ -981,6 +981,7 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable rounded_rectangle
 drawable smartwatch
+drawable smartwatch_drawable_left
 drawable softly_rounded_rectangle
 drawable test_level_drawable
 drawable tooltip_frame_dark
@@ -1102,12 +1103,16 @@ id chain2
 id chains
 id checkbox
 id checked
+id checking_paired_wearables_layout
+id checking_paired_wearables_progressbar
+id checking_paired_wearables_textview
 id chronometer
 id clockwise
 id closest
 id collapseActionView
 id column
 id column_reverse
+id connected_device_without_app_textview
 id constraint
 id content
 id contentPanel
@@ -1117,6 +1122,7 @@ id currentState
 id custom
 id customPanel
 id dark
+id dashboard_scrollview
 id decelerate
 id decelerateAndComplete
 id decor_content_parent
@@ -1184,6 +1190,7 @@ id imageView
 id immediateStop
 id included
 id info
+id install_app_button
 id invisible
 id italic
 id jumpToEnd
@@ -1462,6 +1469,7 @@ string common_signin_button_text_long
 string gyroscope_title
 string install_app
 string light
+string looking_for_paired_wearables
 string lux
 string message_all_installed
 string message_checking
@@ -1473,10 +1481,14 @@ string search_menu_title
 string sensor
 string status_bar_notification_info_overflow
 string store_request_successful
-string store_request_unsuccessful
 string temperature
 string title_main_activity_1
 string title_main_activity_2
+string wearable_connected_without_app
+string x_axis
+string y_axis
+string z_axis
+string zero
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog

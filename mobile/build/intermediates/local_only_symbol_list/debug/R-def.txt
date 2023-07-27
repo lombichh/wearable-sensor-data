@@ -14,6 +14,7 @@ color teal
 color violet
 drawable rounded_rectangle
 drawable smartwatch
+drawable smartwatch_drawable_left
 drawable softly_rounded_rectangle
 font sofia_pro_light
 font sofia_pro_medium
@@ -27,6 +28,11 @@ id accelerometer_yaxis_textview
 id accelerometer_yaxis_value_textview
 id accelerometer_zaxis_textview
 id accelerometer_zaxis_value_textview
+id checking_paired_wearables_layout
+id checking_paired_wearables_progressbar
+id checking_paired_wearables_textview
+id connected_device_without_app_textview
+id dashboard_scrollview
 id device_connected_layout
 id device_connected_textview
 id flexboxLayout
@@ -39,6 +45,7 @@ id gyroscope_yaxis_value_textview
 id gyroscope_zaxis_textview
 id gyroscope_zaxis_value_textview
 id imageView
+id install_app_button
 id light_unit_textview
 id light_value_layout
 id light_value_textview
@@ -58,6 +65,7 @@ string celsius_degrees
 string gyroscope_title
 string install_app
 string light
+string looking_for_paired_wearables
 string lux
 string message_all_installed
 string message_checking
@@ -67,8 +75,12 @@ string message_no_devices
 string message_some_installed
 string sensor
 string store_request_successful
-string store_request_unsuccessful
 string temperature
 string title_main_activity_1
 string title_main_activity_2
+string wearable_connected_without_app
+string x_axis
+string y_axis
+string z_axis
+string zero
 style AppThemeCustom

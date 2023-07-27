@@ -4,8 +4,10 @@ package com.example.wearablesensordata.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -21,7 +23,7 @@ import java.lang.String;
 
 public final class ActivityMainBinding implements ViewBinding {
   @NonNull
-  private final ScrollView rootView;
+  private final ConstraintLayout rootView;
 
   @NonNull
   public final ConstraintLayout accelerometerLayout;
@@ -46,6 +48,21 @@ public final class ActivityMainBinding implements ViewBinding {
 
   @NonNull
   public final TextView accelerometerZaxisValueTextview;
+
+  @NonNull
+  public final LinearLayout checkingPairedWearablesLayout;
+
+  @NonNull
+  public final ProgressBar checkingPairedWearablesProgressbar;
+
+  @NonNull
+  public final TextView checkingPairedWearablesTextview;
+
+  @NonNull
+  public final TextView connectedDeviceWithoutAppTextview;
+
+  @NonNull
+  public final ScrollView dashboardScrollview;
 
   @NonNull
   public final ConstraintLayout deviceConnectedLayout;
@@ -84,6 +101,9 @@ public final class ActivityMainBinding implements ViewBinding {
   public final ImageView imageView;
 
   @NonNull
+  public final Button installAppButton;
+
+  @NonNull
   public final TextView lightUnitTextview;
 
   @NonNull
@@ -116,7 +136,7 @@ public final class ActivityMainBinding implements ViewBinding {
   @NonNull
   public final TextView titleTextview3;
 
-  private ActivityMainBinding(@NonNull ScrollView rootView,
+  private ActivityMainBinding(@NonNull ConstraintLayout rootView,
       @NonNull ConstraintLayout accelerometerLayout, @NonNull TextView accelerometerTitleTextview,
       @NonNull TextView accelerometerXaxisTextview,
       @NonNull TextView accelerometerXaxisValueTextview,
@@ -124,18 +144,22 @@ public final class ActivityMainBinding implements ViewBinding {
       @NonNull TextView accelerometerYaxisValueTextview,
       @NonNull TextView accelerometerZaxisTextview,
       @NonNull TextView accelerometerZaxisValueTextview,
+      @NonNull LinearLayout checkingPairedWearablesLayout,
+      @NonNull ProgressBar checkingPairedWearablesProgressbar,
+      @NonNull TextView checkingPairedWearablesTextview,
+      @NonNull TextView connectedDeviceWithoutAppTextview, @NonNull ScrollView dashboardScrollview,
       @NonNull ConstraintLayout deviceConnectedLayout, @NonNull TextView deviceConnectedTextview,
       @NonNull FlexboxLayout flexboxLayout, @NonNull ConstraintLayout gyroscopeLayout,
       @NonNull TextView gyroscopeTitleTextview, @NonNull TextView gyroscopeXaxisTextview,
       @NonNull TextView gyroscopeXaxisValueTextview, @NonNull TextView gyroscopeYaxisTextview,
       @NonNull TextView gyroscopeYaxisValueTextview, @NonNull TextView gyroscopeZaxisTextview,
       @NonNull TextView gyroscopeZaxisValueTextview, @NonNull ImageView imageView,
-      @NonNull TextView lightUnitTextview, @NonNull LinearLayout lightValueLayout,
-      @NonNull TextView lightValueTextview, @NonNull TextView ligtTextview,
-      @NonNull TextView temperatureTextview, @NonNull TextView temperatureUnitTextview,
-      @NonNull LinearLayout temperatureValueLayout, @NonNull TextView temperatureValueTextview,
-      @NonNull TextView titleTextview1, @NonNull TextView titleTextview2,
-      @NonNull TextView titleTextview3) {
+      @NonNull Button installAppButton, @NonNull TextView lightUnitTextview,
+      @NonNull LinearLayout lightValueLayout, @NonNull TextView lightValueTextview,
+      @NonNull TextView ligtTextview, @NonNull TextView temperatureTextview,
+      @NonNull TextView temperatureUnitTextview, @NonNull LinearLayout temperatureValueLayout,
+      @NonNull TextView temperatureValueTextview, @NonNull TextView titleTextview1,
+      @NonNull TextView titleTextview2, @NonNull TextView titleTextview3) {
     this.rootView = rootView;
     this.accelerometerLayout = accelerometerLayout;
     this.accelerometerTitleTextview = accelerometerTitleTextview;
@@ -145,6 +169,11 @@ public final class ActivityMainBinding implements ViewBinding {
     this.accelerometerYaxisValueTextview = accelerometerYaxisValueTextview;
     this.accelerometerZaxisTextview = accelerometerZaxisTextview;
     this.accelerometerZaxisValueTextview = accelerometerZaxisValueTextview;
+    this.checkingPairedWearablesLayout = checkingPairedWearablesLayout;
+    this.checkingPairedWearablesProgressbar = checkingPairedWearablesProgressbar;
+    this.checkingPairedWearablesTextview = checkingPairedWearablesTextview;
+    this.connectedDeviceWithoutAppTextview = connectedDeviceWithoutAppTextview;
+    this.dashboardScrollview = dashboardScrollview;
     this.deviceConnectedLayout = deviceConnectedLayout;
     this.deviceConnectedTextview = deviceConnectedTextview;
     this.flexboxLayout = flexboxLayout;
@@ -157,6 +186,7 @@ public final class ActivityMainBinding implements ViewBinding {
     this.gyroscopeZaxisTextview = gyroscopeZaxisTextview;
     this.gyroscopeZaxisValueTextview = gyroscopeZaxisValueTextview;
     this.imageView = imageView;
+    this.installAppButton = installAppButton;
     this.lightUnitTextview = lightUnitTextview;
     this.lightValueLayout = lightValueLayout;
     this.lightValueTextview = lightValueTextview;
@@ -172,7 +202,7 @@ public final class ActivityMainBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public ScrollView getRoot() {
+  public ConstraintLayout getRoot() {
     return rootView;
   }
 
@@ -242,6 +272,36 @@ public final class ActivityMainBinding implements ViewBinding {
       id = R.id.accelerometer_zaxis_value_textview;
       TextView accelerometerZaxisValueTextview = ViewBindings.findChildViewById(rootView, id);
       if (accelerometerZaxisValueTextview == null) {
+        break missingId;
+      }
+
+      id = R.id.checking_paired_wearables_layout;
+      LinearLayout checkingPairedWearablesLayout = ViewBindings.findChildViewById(rootView, id);
+      if (checkingPairedWearablesLayout == null) {
+        break missingId;
+      }
+
+      id = R.id.checking_paired_wearables_progressbar;
+      ProgressBar checkingPairedWearablesProgressbar = ViewBindings.findChildViewById(rootView, id);
+      if (checkingPairedWearablesProgressbar == null) {
+        break missingId;
+      }
+
+      id = R.id.checking_paired_wearables_textview;
+      TextView checkingPairedWearablesTextview = ViewBindings.findChildViewById(rootView, id);
+      if (checkingPairedWearablesTextview == null) {
+        break missingId;
+      }
+
+      id = R.id.connected_device_without_app_textview;
+      TextView connectedDeviceWithoutAppTextview = ViewBindings.findChildViewById(rootView, id);
+      if (connectedDeviceWithoutAppTextview == null) {
+        break missingId;
+      }
+
+      id = R.id.dashboard_scrollview;
+      ScrollView dashboardScrollview = ViewBindings.findChildViewById(rootView, id);
+      if (dashboardScrollview == null) {
         break missingId;
       }
 
@@ -317,6 +377,12 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.install_app_button;
+      Button installAppButton = ViewBindings.findChildViewById(rootView, id);
+      if (installAppButton == null) {
+        break missingId;
+      }
+
       id = R.id.light_unit_textview;
       TextView lightUnitTextview = ViewBindings.findChildViewById(rootView, id);
       if (lightUnitTextview == null) {
@@ -383,16 +449,18 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMainBinding((ScrollView) rootView, accelerometerLayout,
+      return new ActivityMainBinding((ConstraintLayout) rootView, accelerometerLayout,
           accelerometerTitleTextview, accelerometerXaxisTextview, accelerometerXaxisValueTextview,
           accelerometerYaxisTextview, accelerometerYaxisValueTextview, accelerometerZaxisTextview,
-          accelerometerZaxisValueTextview, deviceConnectedLayout, deviceConnectedTextview,
-          flexboxLayout, gyroscopeLayout, gyroscopeTitleTextview, gyroscopeXaxisTextview,
-          gyroscopeXaxisValueTextview, gyroscopeYaxisTextview, gyroscopeYaxisValueTextview,
-          gyroscopeZaxisTextview, gyroscopeZaxisValueTextview, imageView, lightUnitTextview,
-          lightValueLayout, lightValueTextview, ligtTextview, temperatureTextview,
-          temperatureUnitTextview, temperatureValueLayout, temperatureValueTextview, titleTextview1,
-          titleTextview2, titleTextview3);
+          accelerometerZaxisValueTextview, checkingPairedWearablesLayout,
+          checkingPairedWearablesProgressbar, checkingPairedWearablesTextview,
+          connectedDeviceWithoutAppTextview, dashboardScrollview, deviceConnectedLayout,
+          deviceConnectedTextview, flexboxLayout, gyroscopeLayout, gyroscopeTitleTextview,
+          gyroscopeXaxisTextview, gyroscopeXaxisValueTextview, gyroscopeYaxisTextview,
+          gyroscopeYaxisValueTextview, gyroscopeZaxisTextview, gyroscopeZaxisValueTextview,
+          imageView, installAppButton, lightUnitTextview, lightValueLayout, lightValueTextview,
+          ligtTextview, temperatureTextview, temperatureUnitTextview, temperatureValueLayout,
+          temperatureValueTextview, titleTextview1, titleTextview2, titleTextview3);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
