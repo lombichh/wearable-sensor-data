@@ -20,6 +20,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.wear.remote.interactions.RemoteActivityHelper
+import com.example.wearablesensordata.data.SensorData
 import com.example.wearablesensordata.databinding.ActivityMainBinding
 import com.google.android.gms.wearable.CapabilityClient
 import com.google.android.gms.wearable.CapabilityClient.OnCapabilityChangedListener
@@ -93,31 +94,37 @@ class MainMobileActivity : AppCompatActivity(), OnCapabilityChangedListener,
             val sensorType = p0.data[0]
 
             when (sensorType) {
-                /*SensorData.ACCELEROMETER -> {
+                SensorData.ACCELEROMETER -> {
                     val accelerometerValues =
                         SensorData.sensorMessageToAccelerometerValues(p0.data)
-                    binding.accelerometerTextview.text =
-                        "AccelerometerX: ${accelerometerValues[0]}\nAccelerometerY: ${accelerometerValues[1]}\nAccelerometerZ: ${accelerometerValues[2]}"
+
+                    binding.accelerometerXaxisValueTextview.text = String.format("%.2f", accelerometerValues[0])
+                    binding.accelerometerYaxisValueTextview.text = String.format("%.2f", accelerometerValues[1])
+                    binding.accelerometerZaxisValueTextview.text = String.format("%.2f", accelerometerValues[2])
                 }
 
                 SensorData.GYROSCOPE -> {
                     val gyroscopeValues =
                         SensorData.sensorMessageToGyroscopeValues(p0.data)
-                    binding.gyroscopeTextview.text =
-                        "GyroscopeX: ${gyroscopeValues[0]}\nGyroscopeY: ${gyroscopeValues[1]}\nGyroscopeZ: ${gyroscopeValues[2]}"
+
+                    binding.gyroscopeXaxisValueTextview.text = String.format("%.2f", gyroscopeValues[0])
+                    binding.gyroscopeYaxisValueTextview.text = String.format("%.2f", gyroscopeValues[1])
+                    binding.gyroscopeZaxisValueTextview.text = String.format("%.2f", gyroscopeValues[2])
                 }
 
                 SensorData.TEMPERATURE -> {
                     val temperatureValue =
                         SensorData.sensorMessageToTemperatureValue(p0.data)
-                    binding.temperatureTextview.text = "Temperature: $temperatureValue"
+
+                    binding.temperatureValueTextview.text = String.format("%.1f", temperatureValue)
                 }
 
                 SensorData.LIGHT -> {
                     val lightValue =
                         SensorData.sensorMessageToLightValue(p0.data)
-                    binding.lightTextview.text = "Light: $lightValue"
-                }*/
+
+                    binding.lightValueTextview.text = String.format("%.1f", lightValue)
+                }
             }
         }
     }

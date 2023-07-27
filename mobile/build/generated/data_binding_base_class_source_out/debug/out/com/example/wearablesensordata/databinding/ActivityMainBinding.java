@@ -5,6 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,7 +21,31 @@ import java.lang.String;
 
 public final class ActivityMainBinding implements ViewBinding {
   @NonNull
-  private final ConstraintLayout rootView;
+  private final ScrollView rootView;
+
+  @NonNull
+  public final ConstraintLayout accelerometerLayout;
+
+  @NonNull
+  public final TextView accelerometerTitleTextview;
+
+  @NonNull
+  public final TextView accelerometerXaxisTextview;
+
+  @NonNull
+  public final TextView accelerometerXaxisValueTextview;
+
+  @NonNull
+  public final TextView accelerometerYaxisTextview;
+
+  @NonNull
+  public final TextView accelerometerYaxisValueTextview;
+
+  @NonNull
+  public final TextView accelerometerZaxisTextview;
+
+  @NonNull
+  public final TextView accelerometerZaxisValueTextview;
 
   @NonNull
   public final ConstraintLayout deviceConnectedLayout;
@@ -31,10 +57,55 @@ public final class ActivityMainBinding implements ViewBinding {
   public final FlexboxLayout flexboxLayout;
 
   @NonNull
+  public final ConstraintLayout gyroscopeLayout;
+
+  @NonNull
+  public final TextView gyroscopeTitleTextview;
+
+  @NonNull
+  public final TextView gyroscopeXaxisTextview;
+
+  @NonNull
+  public final TextView gyroscopeXaxisValueTextview;
+
+  @NonNull
+  public final TextView gyroscopeYaxisTextview;
+
+  @NonNull
+  public final TextView gyroscopeYaxisValueTextview;
+
+  @NonNull
+  public final TextView gyroscopeZaxisTextview;
+
+  @NonNull
+  public final TextView gyroscopeZaxisValueTextview;
+
+  @NonNull
   public final ImageView imageView;
 
   @NonNull
-  public final ConstraintLayout nestedScrollView;
+  public final TextView lightUnitTextview;
+
+  @NonNull
+  public final LinearLayout lightValueLayout;
+
+  @NonNull
+  public final TextView lightValueTextview;
+
+  @NonNull
+  public final TextView ligtTextview;
+
+  @NonNull
+  public final TextView temperatureTextview;
+
+  @NonNull
+  public final TextView temperatureUnitTextview;
+
+  @NonNull
+  public final LinearLayout temperatureValueLayout;
+
+  @NonNull
+  public final TextView temperatureValueTextview;
 
   @NonNull
   public final TextView titleTextview1;
@@ -45,17 +116,55 @@ public final class ActivityMainBinding implements ViewBinding {
   @NonNull
   public final TextView titleTextview3;
 
-  private ActivityMainBinding(@NonNull ConstraintLayout rootView,
+  private ActivityMainBinding(@NonNull ScrollView rootView,
+      @NonNull ConstraintLayout accelerometerLayout, @NonNull TextView accelerometerTitleTextview,
+      @NonNull TextView accelerometerXaxisTextview,
+      @NonNull TextView accelerometerXaxisValueTextview,
+      @NonNull TextView accelerometerYaxisTextview,
+      @NonNull TextView accelerometerYaxisValueTextview,
+      @NonNull TextView accelerometerZaxisTextview,
+      @NonNull TextView accelerometerZaxisValueTextview,
       @NonNull ConstraintLayout deviceConnectedLayout, @NonNull TextView deviceConnectedTextview,
-      @NonNull FlexboxLayout flexboxLayout, @NonNull ImageView imageView,
-      @NonNull ConstraintLayout nestedScrollView, @NonNull TextView titleTextview1,
-      @NonNull TextView titleTextview2, @NonNull TextView titleTextview3) {
+      @NonNull FlexboxLayout flexboxLayout, @NonNull ConstraintLayout gyroscopeLayout,
+      @NonNull TextView gyroscopeTitleTextview, @NonNull TextView gyroscopeXaxisTextview,
+      @NonNull TextView gyroscopeXaxisValueTextview, @NonNull TextView gyroscopeYaxisTextview,
+      @NonNull TextView gyroscopeYaxisValueTextview, @NonNull TextView gyroscopeZaxisTextview,
+      @NonNull TextView gyroscopeZaxisValueTextview, @NonNull ImageView imageView,
+      @NonNull TextView lightUnitTextview, @NonNull LinearLayout lightValueLayout,
+      @NonNull TextView lightValueTextview, @NonNull TextView ligtTextview,
+      @NonNull TextView temperatureTextview, @NonNull TextView temperatureUnitTextview,
+      @NonNull LinearLayout temperatureValueLayout, @NonNull TextView temperatureValueTextview,
+      @NonNull TextView titleTextview1, @NonNull TextView titleTextview2,
+      @NonNull TextView titleTextview3) {
     this.rootView = rootView;
+    this.accelerometerLayout = accelerometerLayout;
+    this.accelerometerTitleTextview = accelerometerTitleTextview;
+    this.accelerometerXaxisTextview = accelerometerXaxisTextview;
+    this.accelerometerXaxisValueTextview = accelerometerXaxisValueTextview;
+    this.accelerometerYaxisTextview = accelerometerYaxisTextview;
+    this.accelerometerYaxisValueTextview = accelerometerYaxisValueTextview;
+    this.accelerometerZaxisTextview = accelerometerZaxisTextview;
+    this.accelerometerZaxisValueTextview = accelerometerZaxisValueTextview;
     this.deviceConnectedLayout = deviceConnectedLayout;
     this.deviceConnectedTextview = deviceConnectedTextview;
     this.flexboxLayout = flexboxLayout;
+    this.gyroscopeLayout = gyroscopeLayout;
+    this.gyroscopeTitleTextview = gyroscopeTitleTextview;
+    this.gyroscopeXaxisTextview = gyroscopeXaxisTextview;
+    this.gyroscopeXaxisValueTextview = gyroscopeXaxisValueTextview;
+    this.gyroscopeYaxisTextview = gyroscopeYaxisTextview;
+    this.gyroscopeYaxisValueTextview = gyroscopeYaxisValueTextview;
+    this.gyroscopeZaxisTextview = gyroscopeZaxisTextview;
+    this.gyroscopeZaxisValueTextview = gyroscopeZaxisValueTextview;
     this.imageView = imageView;
-    this.nestedScrollView = nestedScrollView;
+    this.lightUnitTextview = lightUnitTextview;
+    this.lightValueLayout = lightValueLayout;
+    this.lightValueTextview = lightValueTextview;
+    this.ligtTextview = ligtTextview;
+    this.temperatureTextview = temperatureTextview;
+    this.temperatureUnitTextview = temperatureUnitTextview;
+    this.temperatureValueLayout = temperatureValueLayout;
+    this.temperatureValueTextview = temperatureValueTextview;
     this.titleTextview1 = titleTextview1;
     this.titleTextview2 = titleTextview2;
     this.titleTextview3 = titleTextview3;
@@ -63,7 +172,7 @@ public final class ActivityMainBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public ConstraintLayout getRoot() {
+  public ScrollView getRoot() {
     return rootView;
   }
 
@@ -88,6 +197,54 @@ public final class ActivityMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.accelerometer_layout;
+      ConstraintLayout accelerometerLayout = ViewBindings.findChildViewById(rootView, id);
+      if (accelerometerLayout == null) {
+        break missingId;
+      }
+
+      id = R.id.accelerometer_title_textview;
+      TextView accelerometerTitleTextview = ViewBindings.findChildViewById(rootView, id);
+      if (accelerometerTitleTextview == null) {
+        break missingId;
+      }
+
+      id = R.id.accelerometer_xaxis_textview;
+      TextView accelerometerXaxisTextview = ViewBindings.findChildViewById(rootView, id);
+      if (accelerometerXaxisTextview == null) {
+        break missingId;
+      }
+
+      id = R.id.accelerometer_xaxis_value_textview;
+      TextView accelerometerXaxisValueTextview = ViewBindings.findChildViewById(rootView, id);
+      if (accelerometerXaxisValueTextview == null) {
+        break missingId;
+      }
+
+      id = R.id.accelerometer_yaxis_textview;
+      TextView accelerometerYaxisTextview = ViewBindings.findChildViewById(rootView, id);
+      if (accelerometerYaxisTextview == null) {
+        break missingId;
+      }
+
+      id = R.id.accelerometer_yaxis_value_textview;
+      TextView accelerometerYaxisValueTextview = ViewBindings.findChildViewById(rootView, id);
+      if (accelerometerYaxisValueTextview == null) {
+        break missingId;
+      }
+
+      id = R.id.accelerometer_zaxis_textview;
+      TextView accelerometerZaxisTextview = ViewBindings.findChildViewById(rootView, id);
+      if (accelerometerZaxisTextview == null) {
+        break missingId;
+      }
+
+      id = R.id.accelerometer_zaxis_value_textview;
+      TextView accelerometerZaxisValueTextview = ViewBindings.findChildViewById(rootView, id);
+      if (accelerometerZaxisValueTextview == null) {
+        break missingId;
+      }
+
       id = R.id.device_connected_layout;
       ConstraintLayout deviceConnectedLayout = ViewBindings.findChildViewById(rootView, id);
       if (deviceConnectedLayout == null) {
@@ -106,13 +263,107 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.gyroscope_layout;
+      ConstraintLayout gyroscopeLayout = ViewBindings.findChildViewById(rootView, id);
+      if (gyroscopeLayout == null) {
+        break missingId;
+      }
+
+      id = R.id.gyroscope_title_textview;
+      TextView gyroscopeTitleTextview = ViewBindings.findChildViewById(rootView, id);
+      if (gyroscopeTitleTextview == null) {
+        break missingId;
+      }
+
+      id = R.id.gyroscope_xaxis_textview;
+      TextView gyroscopeXaxisTextview = ViewBindings.findChildViewById(rootView, id);
+      if (gyroscopeXaxisTextview == null) {
+        break missingId;
+      }
+
+      id = R.id.gyroscope_xaxis_value_textview;
+      TextView gyroscopeXaxisValueTextview = ViewBindings.findChildViewById(rootView, id);
+      if (gyroscopeXaxisValueTextview == null) {
+        break missingId;
+      }
+
+      id = R.id.gyroscope_yaxis_textview;
+      TextView gyroscopeYaxisTextview = ViewBindings.findChildViewById(rootView, id);
+      if (gyroscopeYaxisTextview == null) {
+        break missingId;
+      }
+
+      id = R.id.gyroscope_yaxis_value_textview;
+      TextView gyroscopeYaxisValueTextview = ViewBindings.findChildViewById(rootView, id);
+      if (gyroscopeYaxisValueTextview == null) {
+        break missingId;
+      }
+
+      id = R.id.gyroscope_zaxis_textview;
+      TextView gyroscopeZaxisTextview = ViewBindings.findChildViewById(rootView, id);
+      if (gyroscopeZaxisTextview == null) {
+        break missingId;
+      }
+
+      id = R.id.gyroscope_zaxis_value_textview;
+      TextView gyroscopeZaxisValueTextview = ViewBindings.findChildViewById(rootView, id);
+      if (gyroscopeZaxisValueTextview == null) {
+        break missingId;
+      }
+
       id = R.id.imageView;
       ImageView imageView = ViewBindings.findChildViewById(rootView, id);
       if (imageView == null) {
         break missingId;
       }
 
-      ConstraintLayout nestedScrollView = (ConstraintLayout) rootView;
+      id = R.id.light_unit_textview;
+      TextView lightUnitTextview = ViewBindings.findChildViewById(rootView, id);
+      if (lightUnitTextview == null) {
+        break missingId;
+      }
+
+      id = R.id.light_value_layout;
+      LinearLayout lightValueLayout = ViewBindings.findChildViewById(rootView, id);
+      if (lightValueLayout == null) {
+        break missingId;
+      }
+
+      id = R.id.light_value_textview;
+      TextView lightValueTextview = ViewBindings.findChildViewById(rootView, id);
+      if (lightValueTextview == null) {
+        break missingId;
+      }
+
+      id = R.id.ligt_textview;
+      TextView ligtTextview = ViewBindings.findChildViewById(rootView, id);
+      if (ligtTextview == null) {
+        break missingId;
+      }
+
+      id = R.id.temperature_textview;
+      TextView temperatureTextview = ViewBindings.findChildViewById(rootView, id);
+      if (temperatureTextview == null) {
+        break missingId;
+      }
+
+      id = R.id.temperature_unit_textview;
+      TextView temperatureUnitTextview = ViewBindings.findChildViewById(rootView, id);
+      if (temperatureUnitTextview == null) {
+        break missingId;
+      }
+
+      id = R.id.temperature_value_layout;
+      LinearLayout temperatureValueLayout = ViewBindings.findChildViewById(rootView, id);
+      if (temperatureValueLayout == null) {
+        break missingId;
+      }
+
+      id = R.id.temperature_value_textview;
+      TextView temperatureValueTextview = ViewBindings.findChildViewById(rootView, id);
+      if (temperatureValueTextview == null) {
+        break missingId;
+      }
 
       id = R.id.title_textview1;
       TextView titleTextview1 = ViewBindings.findChildViewById(rootView, id);
@@ -132,8 +383,15 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMainBinding((ConstraintLayout) rootView, deviceConnectedLayout,
-          deviceConnectedTextview, flexboxLayout, imageView, nestedScrollView, titleTextview1,
+      return new ActivityMainBinding((ScrollView) rootView, accelerometerLayout,
+          accelerometerTitleTextview, accelerometerXaxisTextview, accelerometerXaxisValueTextview,
+          accelerometerYaxisTextview, accelerometerYaxisValueTextview, accelerometerZaxisTextview,
+          accelerometerZaxisValueTextview, deviceConnectedLayout, deviceConnectedTextview,
+          flexboxLayout, gyroscopeLayout, gyroscopeTitleTextview, gyroscopeXaxisTextview,
+          gyroscopeXaxisValueTextview, gyroscopeYaxisTextview, gyroscopeYaxisValueTextview,
+          gyroscopeZaxisTextview, gyroscopeZaxisValueTextview, imageView, lightUnitTextview,
+          lightValueLayout, lightValueTextview, ligtTextview, temperatureTextview,
+          temperatureUnitTextview, temperatureValueLayout, temperatureValueTextview, titleTextview1,
           titleTextview2, titleTextview3);
     }
     String missingId = rootView.getResources().getResourceName(id);

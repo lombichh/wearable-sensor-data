@@ -12,12 +12,16 @@
         "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.2.1\\com.example.wearablesensordata.mobile-main-34:\\font\\sofia_pro_semibold.otf"
     },
     {
-        "merged": "com.example.wearablesensordata.mobile-merged_res-32:/drawable_smartwatch.png.flat",
-        "source": "com.example.wearablesensordata.mobile-main-34:/drawable/smartwatch.png"
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.2.1\\com.example.wearablesensordata.mobile-merged_res-32:\\layout_three_values_sensorview.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.2.1\\com.example.wearablesensordata.mobile-main-34:\\layout\\three_values_sensorview.xml"
     },
     {
         "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.2.1\\com.example.wearablesensordata.mobile-merged_res-32:\\font_sofia_pro_light.otf.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.2.1\\com.example.wearablesensordata.mobile-main-34:\\font\\sofia_pro_light.otf"
+    },
+    {
+        "merged": "com.example.wearablesensordata.mobile-merged_res-32:/layout_activity_main.xml.flat",
+        "source": "com.example.wearablesensordata.mobile-main-34:/layout/activity_main.xml"
     },
     {
         "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.2.1\\com.example.wearablesensordata.mobile-merged_res-32:\\mipmap-mdpi_ic_launcher.png.flat",
@@ -40,8 +44,16 @@
         "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.2.1\\com.example.wearablesensordata.mobile-main-34:\\drawable\\smartwatch.png"
     },
     {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.2.1\\com.example.wearablesensordata.mobile-merged_res-32:\\drawable_softly_rounded_rectangle.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.2.1\\com.example.wearablesensordata.mobile-main-34:\\drawable\\softly_rounded_rectangle.xml"
+    },
+    {
         "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.2.1\\com.example.wearablesensordata.mobile-merged_res-32:\\mipmap-hdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.2.1\\com.example.wearablesensordata.mobile-main-34:\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.2.1\\com.example.wearablesensordata.mobile-merged_res-32:\\font_sofia_pro_regular.otf.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.2.1\\com.example.wearablesensordata.mobile-main-34:\\font\\sofia_pro_regular.otf"
     },
     {
         "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.2.1\\com.example.wearablesensordata.mobile-merged_res-32:\\mipmap-xxxhdpi_ic_launcher.png.flat",

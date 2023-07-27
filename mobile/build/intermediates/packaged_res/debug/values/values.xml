@@ -4,11 +4,24 @@
         
         <item>verify_remote_example_phone_app</item>
     </string-array>
+    <color name="blue">#4361EE</color>
+    <color name="bordeaux">#9E0059</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
+    <color name="indigo">#7209B7</color>
+    <color name="light_blue">#A1B0F7</color>
+    <color name="light_green">#57BF9C</color>
+    <color name="light_violet">#9C85D1</color>
+    <color name="teal">#4CC9F0</color>
+    <color name="violet">#3A0CA3</color>
+    <string name="accelerometer_title">Accelerometer (m/s\u00B2)</string>
     <string name="app_name">WearableSensorData</string>
+    <string name="celsius_degrees">\u00B0C</string>
+    <string name="gyroscope_title">Gyroscope (rad/s)</string>
     <string name="install_app">Install App on Wear device(s)</string>
+    <string name="light">Light</string>
+    <string name="lux">Lux</string>
     <string name="message_all_installed">Welcome to our Mobile app!\n\nWear app installed on all your devices (%1$s)!\n\nYou can now use the MessageClient, DataClient, etc.</string>
     <string name="message_checking">Welcome to our Mobile app!\n\nChecking for Wear Devices for app…</string>
     <string name="message_device_connected">%s connected</string>
@@ -18,6 +31,7 @@
     <string name="sensor">sensor</string>
     <string name="store_request_successful">Play Store Request to Wear device successful.</string>
     <string name="store_request_unsuccessful">Play Store Request Failed. Wear device(s) may not support Play Store, that is, the Wear device may be version 1.0.</string>
+    <string name="temperature">Temperature</string>
     <string name="title_main_activity_1">Here\'s your</string>
     <string name="title_main_activity_2">dashboard</string>
     <style name="AppThemeCustom" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -25,6 +39,5 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="fontFamily">@font/sofia_pro_light</item>
     </style>
 </resources>
