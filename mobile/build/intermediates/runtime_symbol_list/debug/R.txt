@@ -971,6 +971,7 @@ int drawable notification_template_icon_low_bg 0x7f08007b
 int drawable notification_tile_bg 0x7f08007c
 int drawable notify_panel_notification_icon_bg 0x7f08007d
 int drawable rounded_rectangle 0x7f08007e
+int drawable smartwatch 0x7f080082
 int drawable test_level_drawable 0x7f08007f
 int drawable tooltip_frame_dark 0x7f080080
 int drawable tooltip_frame_light 0x7f080081
@@ -1103,6 +1104,8 @@ int id decor_content_parent 0x7f0a007a
 int id default_activity_button 0x7f0a007b
 int id deltaRelative 0x7f0a007c
 int id dependency_ordering 0x7f0a007d
+int id device_connected_layout 0x7f0a014d
+int id device_connected_textview 0x7f0a014e
 int id dialog_button 0x7f0a007e
 int id dimensions 0x7f0a007f
 int id direct 0x7f0a0080
@@ -1128,6 +1131,7 @@ int id expand_activities_button 0x7f0a0093
 int id expanded_menu 0x7f0a0094
 int id flex_end 0x7f0a0095
 int id flex_start 0x7f0a0096
+int id flexboxLayout 0x7f0a014f
 int id flip 0x7f0a0097
 int id forever 0x7f0a0098
 int id fragment_container_view_tag 0x7f0a0099
@@ -1149,6 +1153,7 @@ int id ifRoom 0x7f0a00a8
 int id ignore 0x7f0a00a9
 int id ignoreRequest 0x7f0a00aa
 int id image 0x7f0a00ab
+int id imageView 0x7f0a0150
 int id immediateStop 0x7f0a00ac
 int id included 0x7f0a00ad
 int id info 0x7f0a00ae
@@ -1421,6 +1426,7 @@ int string common_signin_button_text_long 0x7f0f0035
 int string install_app 0x7f0f0036
 int string message_all_installed 0x7f0f0037
 int string message_checking 0x7f0f0038
+int string message_device_connected 0x7f0f0043
 int string message_missing_all 0x7f0f0039
 int string message_no_devices 0x7f0f003a
 int string message_some_installed 0x7f0f003b

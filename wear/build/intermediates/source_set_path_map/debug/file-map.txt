@@ -25,10 +25,10 @@ com.example.wearablesensordata.wear-lifecycle-livedata-2.6.1-23 C:\Users\ASUS\.g
 com.example.wearablesensordata.wear-jetified-lifecycle-viewmodel-savedstate-2.6.1-24 C:\Users\ASUS\.gradle\caches\transforms-3\e47d3b81b0e68a6c1bc24ad5b39afb7b\transformed\jetified-lifecycle-viewmodel-savedstate-2.6.1\res
 com.example.wearablesensordata.wear-jetified-activity-1.7.2-25 C:\Users\ASUS\.gradle\caches\transforms-3\ef94618960b4c946183696ff8671ea76\transformed\jetified-activity-1.7.2\res
 com.example.wearablesensordata.wear-lifecycle-viewmodel-2.6.1-26 C:\Users\ASUS\.gradle\caches\transforms-3\f320e6dcf961a35fe9ef1a1b8982f3e5\transformed\lifecycle-viewmodel-2.6.1\res
-com.example.wearablesensordata.wear-pngs-27 C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\wear\build\generated\res\pngs\debug
-com.example.wearablesensordata.wear-resValues-28 C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\wear\build\generated\res\resValues\debug
-com.example.wearablesensordata.wear-packageDebugResources-29 C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\wear\build\intermediates\incremental\debug\packageDebugResources\merged.dir
-com.example.wearablesensordata.wear-packageDebugResources-30 C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\wear\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
-com.example.wearablesensordata.wear-merged_res-31 C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\wear\build\intermediates\merged_res\debug
-com.example.wearablesensordata.wear-debug-32 C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\wear\src\debug\res
-com.example.wearablesensordata.wear-main-33 C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\wear\src\main\res
+com.example.wearablesensordata.wear-pngs-27 C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\WearableSensorData\wear\build\generated\res\pngs\debug
+com.example.wearablesensordata.wear-resValues-28 C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\WearableSensorData\wear\build\generated\res\resValues\debug
+com.example.wearablesensordata.wear-packageDebugResources-29 C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\WearableSensorData\wear\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.example.wearablesensordata.wear-packageDebugResources-30 C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\WearableSensorData\wear\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.example.wearablesensordata.wear-merged_res-31 C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\WearableSensorData\wear\build\intermediates\merged_res\debug
+com.example.wearablesensordata.wear-debug-32 C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\WearableSensorData\wear\src\debug\res
+com.example.wearablesensordata.wear-main-33 C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\WearableSensorData\wear\src\main\res

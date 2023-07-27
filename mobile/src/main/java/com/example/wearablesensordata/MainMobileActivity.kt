@@ -11,6 +11,7 @@ import android.text.style.BackgroundColorSpan
 import android.text.style.ForegroundColorSpan
 import android.text.style.ImageSpan
 import android.text.style.StyleSpan
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -122,42 +123,7 @@ class MainMobileActivity : AppCompatActivity(), OnCapabilityChangedListener,
     }
 
     private fun initUi() {
-        setTitleStyle()
-    }
 
-    private fun setTitleStyle() {
-        /*// Find index of substring "sensor" to apply a different style
-        val startSubstring = getString(R.string.title_main_activity).indexOf("sensor")
-        val endSubstring = startSubstring + "sensor".length
-
-        val spannable = SpannableStringBuilder(getString(R.string.title_main_activity))
-
-        // Apply different style to "sensor" substring
-        spannable.setSpan(
-            ForegroundColorSpan(getColor(android.R.color.white)),
-            startSubstring,
-            endSubstring,
-            0
-        )
-        spannable.setSpan(
-            StyleSpan(Typeface.BOLD),
-            startSubstring,
-            endSubstring,
-            0
-        )
-
-        // Aggiungi la Drawable di sfondo dietro alla parola "sensor"
-        val drawable: Drawable? = ResourcesCompat.getDrawable(resources, R.drawable.rounded_rectangle, null)
-        drawable?.setBounds(0, 0, 350, 100)
-
-        // Usa BackgroundColorSpan per impostare lo sfondo colorato
-        spannable.setSpan(BackgroundColorSpan(ContextCompat.getColor(this, android.R.color.black)), startSubstring, endSubstring, 0)
-
-        // Usa ImageSpan per sovrapporre la Drawable come sfondo colorato
-        spannable.setSpan(drawable?.let { ImageSpan(it, ImageSpan.ALIGN_BOTTOM) }, startSubstring, endSubstring, 0)
-
-        // Imposta il testo formattato nella TextView
-        binding.titleTextview.text = spannable*/
     }
 
     private fun initWearAPIs() {
@@ -219,40 +185,53 @@ class MainMobileActivity : AppCompatActivity(), OnCapabilityChangedListener,
         val allConnectedNodes = allConnectedNodes
 
         when {
-            /*connectedNodesWithApp == null || allConnectedNodes == null -> {
+            connectedNodesWithApp == null || allConnectedNodes == null -> {
                 // Waiting on Results for both connected nodes and nodes with app
-                binding.infoTextview.text = getString(R.string.message_checking)
+                binding.deviceConnectedLayout.visibility = View.GONE
             }
 
             allConnectedNodes.isEmpty() -> {
                 // No devices connected
-                binding.infoTextview.text = getString(R.string.message_checking)
-
                 Wearable.getMessageClient(this).removeListener(this)
+
+                binding.deviceConnectedLayout.visibility = View.GONE
             }
 
             connectedNodesWithApp.isEmpty() -> {
                 // Missing on all devices
-                binding.infoTextview.text = getString(R.string.message_missing_all)
-
                 Wearable.getMessageClient(this).removeListener(this)
+
+                binding.deviceConnectedLayout.visibility = View.GONE
             }
 
             connectedNodesWithApp.size < allConnectedNodes.size -> {
                 // Installed on some devices
-                binding.infoTextview.text =
-                    getString(R.string.message_some_installed, connectedNodesWithApp.toString())
-
                 Wearable.getMessageClient(this).addListener(this)
+
+                // Update connected device textview
+                connectedNodesWithApp.firstOrNull()?.let {
+                    binding.deviceConnectedTextview.text = getString(
+                        R.string.message_device_connected,
+                        it.displayName
+                    )
+                    binding.deviceConnectedLayout.visibility = View.VISIBLE
+                }
             }
 
             else -> {
                 // Installed on all devices
-                binding.infoTextview.text =
-                    getString(R.string.message_all_installed, connectedNodesWithApp.toString())
-
                 Wearable.getMessageClient(this).addListener(this)
-            }*/
+
+                // Update connected device textview
+                connectedNodesWithApp.firstOrNull()?.let {
+                    binding.deviceConnectedTextview.text = getString(
+                        R.string.message_device_connected,
+                        it.displayName
+                    )
+                    binding.deviceConnectedLayout.visibility = View.VISIBLE
+
+                }
+            }
         }
     }
 

@@ -5,9 +5,14 @@ color colorAccent
 color colorPrimary
 color colorPrimaryDark
 drawable rounded_rectangle
+drawable smartwatch
 font sofia_pro_light
 font sofia_pro_medium
 font sofia_pro_semibold
+id device_connected_layout
+id device_connected_textview
+id flexboxLayout
+id imageView
 id nestedScrollView
 id title_textview1
 id title_textview2
@@ -18,6 +23,7 @@ string app_name
 string install_app
 string message_all_installed
 string message_checking
+string message_device_connected
 string message_missing_all
 string message_no_devices
 string message_some_installed

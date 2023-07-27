@@ -4,6 +4,7 @@ package com.example.wearablesensordata.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -11,6 +12,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.wearablesensordata.R;
+import com.google.android.flexbox.FlexboxLayout;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -18,6 +20,18 @@ import java.lang.String;
 public final class ActivityMainBinding implements ViewBinding {
   @NonNull
   private final ConstraintLayout rootView;
+
+  @NonNull
+  public final ConstraintLayout deviceConnectedLayout;
+
+  @NonNull
+  public final TextView deviceConnectedTextview;
+
+  @NonNull
+  public final FlexboxLayout flexboxLayout;
+
+  @NonNull
+  public final ImageView imageView;
 
   @NonNull
   public final ConstraintLayout nestedScrollView;
@@ -32,9 +46,15 @@ public final class ActivityMainBinding implements ViewBinding {
   public final TextView titleTextview3;
 
   private ActivityMainBinding(@NonNull ConstraintLayout rootView,
+      @NonNull ConstraintLayout deviceConnectedLayout, @NonNull TextView deviceConnectedTextview,
+      @NonNull FlexboxLayout flexboxLayout, @NonNull ImageView imageView,
       @NonNull ConstraintLayout nestedScrollView, @NonNull TextView titleTextview1,
       @NonNull TextView titleTextview2, @NonNull TextView titleTextview3) {
     this.rootView = rootView;
+    this.deviceConnectedLayout = deviceConnectedLayout;
+    this.deviceConnectedTextview = deviceConnectedTextview;
+    this.flexboxLayout = flexboxLayout;
+    this.imageView = imageView;
     this.nestedScrollView = nestedScrollView;
     this.titleTextview1 = titleTextview1;
     this.titleTextview2 = titleTextview2;
@@ -68,6 +88,30 @@ public final class ActivityMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.device_connected_layout;
+      ConstraintLayout deviceConnectedLayout = ViewBindings.findChildViewById(rootView, id);
+      if (deviceConnectedLayout == null) {
+        break missingId;
+      }
+
+      id = R.id.device_connected_textview;
+      TextView deviceConnectedTextview = ViewBindings.findChildViewById(rootView, id);
+      if (deviceConnectedTextview == null) {
+        break missingId;
+      }
+
+      id = R.id.flexboxLayout;
+      FlexboxLayout flexboxLayout = ViewBindings.findChildViewById(rootView, id);
+      if (flexboxLayout == null) {
+        break missingId;
+      }
+
+      id = R.id.imageView;
+      ImageView imageView = ViewBindings.findChildViewById(rootView, id);
+      if (imageView == null) {
+        break missingId;
+      }
+
       ConstraintLayout nestedScrollView = (ConstraintLayout) rootView;
 
       id = R.id.title_textview1;
@@ -88,7 +132,8 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMainBinding((ConstraintLayout) rootView, nestedScrollView, titleTextview1,
+      return new ActivityMainBinding((ConstraintLayout) rootView, deviceConnectedLayout,
+          deviceConnectedTextview, flexboxLayout, imageView, nestedScrollView, titleTextview1,
           titleTextview2, titleTextview3);
     }
     String missingId = rootView.getResources().getResourceName(id);

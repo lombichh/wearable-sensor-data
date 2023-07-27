@@ -3847,6 +3847,25 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\ASUS\\Desktop\\Projects\\Coding\\Java\\Android\\Work\\WearableSensorData\\WearableSensorData\\wear\\src\\main\\res\\values\\wear.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "19",
+                        "endOffsets": "271"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "105",
+                        "endLines": "5",
+                        "endColumns": "19",
+                        "endOffsets": "233"
+                    }
+                },
+                {
                     "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\7b14cc727509ad0d379e81427d105232\\transformed\\wear-1.2.0\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2,8,9,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,75,79,84,99,107,112,120,123,128,136,171,212,224,245,274,304,308,317,327,339",
@@ -4029,42 +4048,6 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\ASUS\\Desktop\\Projects\\Coding\\Java\\Android\\Work\\WearableSensorData\\wear\\src\\main\\res\\values\\strings.xml",
-                    "from": {
-                        "startLines": "2,6,3,5,4",
-                        "startColumns": "4,4,4,4,4",
-                        "startOffsets": "55,541,111,383,209",
-                        "endColumns": "55,58,97,157,173",
-                        "endOffsets": "106,595,204,536,378"
-                    },
-                    "to": {
-                        "startLines": "739,769,770,771,772",
-                        "startColumns": "4,4,4,4,4",
-                        "startOffsets": "40600,43825,43884,43982,44140",
-                        "endColumns": "55,58,97,157,173",
-                        "endOffsets": "40651,43879,43977,44135,44309"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\ASUS\\Desktop\\Projects\\Coding\\Java\\Android\\Work\\WearableSensorData\\wear\\src\\main\\res\\values\\wear.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endLines": "5",
-                        "endColumns": "19",
-                        "endOffsets": "271"
-                    },
-                    "to": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "105",
-                        "endLines": "5",
-                        "endColumns": "19",
-                        "endOffsets": "233"
-                    }
-                },
-                {
                     "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\c2136152f9f15253b8fd8aeda70399e1\\transformed\\jetified-play-services-basement-18.0.0\\res\\values\\values.xml",
                     "from": {
                         "startLines": "4,7",
@@ -4079,6 +4062,23 @@
                         "startOffsets": "38513,42207",
                         "endColumns": "67,166",
                         "endOffsets": "38576,42369"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\ASUS\\Desktop\\Projects\\Coding\\Java\\Android\\Work\\WearableSensorData\\WearableSensorData\\wear\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "2,6,3,5,4",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "55,541,111,383,209",
+                        "endColumns": "55,58,97,157,173",
+                        "endOffsets": "106,595,204,536,378"
+                    },
+                    "to": {
+                        "startLines": "739,769,770,771,772",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "40600,43825,43884,43982,44140",
+                        "endColumns": "55,58,97,157,173",
+                        "endOffsets": "40651,43879,43977,44135,44309"
                     }
                 }
             ]

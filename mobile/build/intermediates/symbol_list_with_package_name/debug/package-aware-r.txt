@@ -972,6 +972,7 @@ drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable rounded_rectangle
+drawable smartwatch
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -1104,6 +1105,8 @@ id decor_content_parent
 id default_activity_button
 id deltaRelative
 id dependency_ordering
+id device_connected_layout
+id device_connected_textview
 id dialog_button
 id dimensions
 id direct
@@ -1129,6 +1132,7 @@ id expand_activities_button
 id expanded_menu
 id flex_end
 id flex_start
+id flexboxLayout
 id flip
 id forever
 id fragment_container_view_tag
@@ -1150,6 +1154,7 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imageView
 id immediateStop
 id included
 id info
@@ -1422,6 +1427,7 @@ string common_signin_button_text_long
 string install_app
 string message_all_installed
 string message_checking
+string message_device_connected
 string message_missing_all
 string message_no_devices
 string message_some_installed
