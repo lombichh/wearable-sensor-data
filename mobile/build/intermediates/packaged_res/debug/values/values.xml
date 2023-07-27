@@ -39,7 +39,7 @@
     <string name="y_axis">y-axis</string>
     <string name="z_axis">z-axis</string>
     <string name="zero">0</string>
-    <style name="AppThemeCustom" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppThemeCustom" parent="Theme.AppCompat.Light.NoActionBar">
         
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
