@@ -4,7 +4,7 @@
             "outputFile": "com.example.wearablesensordata.wear-mergeDebugResources-29:/values-round-v23/values-round-v23.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\7b14cc727509ad0d379e81427d105232\\transformed\\wear-1.2.0\\res\\values-round-v23\\values-round-v23.xml",
+                    "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\4656c82ab75cb2596b968a2d6f0ee41a\\transformed\\wear-1.2.0\\res\\values-round-v23\\values-round-v23.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",

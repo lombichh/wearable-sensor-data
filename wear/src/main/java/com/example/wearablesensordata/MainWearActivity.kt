@@ -1,14 +1,10 @@
 package com.example.wearablesensordata
 
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.lifecycleScope
-import androidx.wear.remote.interactions.RemoteActivityHelper
-import androidx.wear.widget.ConfirmationOverlay
 import com.example.wearablesensordata.databinding.ActivityMainBinding
 import com.example.wearablesensordata.services.SensorForegroundService
 import com.example.wearablesensordata.utils.ServiceUtils
@@ -18,7 +14,6 @@ import com.google.android.gms.wearable.Node
 import com.google.android.gms.wearable.Wearable
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.guava.await
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withContext

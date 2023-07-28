@@ -88,18 +88,24 @@ class MainMobileActivity : AppCompatActivity(), OnCapabilityChangedListener,
                     val accelerometerValues =
                         SensorData.sensorMessageToAccelerometerValues(messageEvent.data)
 
-                    binding.accelerometerXaxisValueTextview.text = String.format("%.2f", accelerometerValues[0])
-                    binding.accelerometerYaxisValueTextview.text = String.format("%.2f", accelerometerValues[1])
-                    binding.accelerometerZaxisValueTextview.text = String.format("%.2f", accelerometerValues[2])
+                    binding.accelerometerXaxisValueTextview.text =
+                        String.format("%.2f", accelerometerValues[0])
+                    binding.accelerometerYaxisValueTextview.text =
+                        String.format("%.2f", accelerometerValues[1])
+                    binding.accelerometerZaxisValueTextview.text =
+                        String.format("%.2f", accelerometerValues[2])
                 }
 
                 SensorData.GYROSCOPE -> {
                     val gyroscopeValues =
                         SensorData.sensorMessageToGyroscopeValues(messageEvent.data)
 
-                    binding.gyroscopeXaxisValueTextview.text = String.format("%.2f", gyroscopeValues[0])
-                    binding.gyroscopeYaxisValueTextview.text = String.format("%.2f", gyroscopeValues[1])
-                    binding.gyroscopeZaxisValueTextview.text = String.format("%.2f", gyroscopeValues[2])
+                    binding.gyroscopeXaxisValueTextview.text =
+                        String.format("%.2f", gyroscopeValues[0])
+                    binding.gyroscopeYaxisValueTextview.text =
+                        String.format("%.2f", gyroscopeValues[1])
+                    binding.gyroscopeZaxisValueTextview.text =
+                        String.format("%.2f", gyroscopeValues[2])
                 }
 
                 SensorData.TEMPERATURE -> {
@@ -306,7 +312,6 @@ class MainMobileActivity : AppCompatActivity(), OnCapabilityChangedListener,
         private const val CAPABILITY_WEAR_APP = "verify_remote_example_wear_app"
 
         // Links to Wear app (Play Store).
-        // TODO: Replace with actual link.
         private const val PLAY_STORE_APP_URI =
             "market://details?id=com.example.wearablesensordata"
 

@@ -13,7 +13,6 @@ import android.hardware.SensorManager
 import android.os.IBinder
 import android.util.Log
 import androidx.core.app.NotificationCompat
-import androidx.wear.remote.interactions.RemoteActivityHelper
 import com.example.wearablesensordata.R
 import com.example.wearablesensordata.data.SensorData
 import com.example.wearablesensordata.notifications.Notifications
@@ -62,8 +61,8 @@ class SensorForegroundService : Service(), CapabilityClient.OnCapabilityChangedL
 
         val notification: Notification = NotificationCompat
             .Builder(this, Notifications.SENSOR_CHANNEL_ID)
-            .setContentTitle("${getString(R.string.app_name)} Foreground Service")
-            .setContentText("Listening to sensor changes")
+            .setContentTitle(getString(R.string.app_name))
+            .setContentText("The app is sending sensor data to the phone.")
             .setSmallIcon(R.mipmap.ic_launcher)
             .build()
 
@@ -153,7 +152,8 @@ class SensorForegroundService : Service(), CapabilityClient.OnCapabilityChangedL
                         actualTime - lastTemperatureUpdateTimestamp!!
                         >= SensorData.SENSOR_MESSAGE_MINIMUM_INTERVAL
                     ) {
-                        val sensorMessage = SensorData.temperatureValueToSensorMessage(sensorEvent.values[0])
+                        val sensorMessage =
+                            SensorData.temperatureValueToSensorMessage(sensorEvent.values[0])
                         sendSensorMessageToPhone(sensorMessage)
 
                         lastTemperatureUpdateTimestamp = actualTime
@@ -168,7 +168,8 @@ class SensorForegroundService : Service(), CapabilityClient.OnCapabilityChangedL
                         actualTime - lastLightUpdateTimestamp!!
                         >= SensorData.SENSOR_MESSAGE_MINIMUM_INTERVAL
                     ) {
-                        val sensorMessage = SensorData.lightValueToSensorMessage(sensorEvent.values[0])
+                        val sensorMessage =
+                            SensorData.lightValueToSensorMessage(sensorEvent.values[0])
                         sendSensorMessageToPhone(sensorMessage)
 
                         lastLightUpdateTimestamp = actualTime

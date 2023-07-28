@@ -2,12 +2,12 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:drawable="@drawable/smartwatch"
-        android:height="30dp"
         android:width="30dp"
+        android:height="30dp"
+        android:bottom="10dp"
+        android:drawable="@drawable/smartwatch"
         android:left="10dp"
-        android:top="10dp"
         android:right="10dp"
-        android:bottom="10dp" />
+        android:top="10dp" />
 
 </layer-list>

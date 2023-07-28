@@ -4,7 +4,7 @@
             "outputFile": "com.example.wearablesensordata.wear-mergeDebugResources-29:/values-ar/values-ar.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\4c94c52a8167a773b71f662d8016f2ed\\transformed\\appcompat-1.2.0\\res\\values-ar\\values-ar.xml",
+                    "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\a3d15c0b1d03f8f6c088ecde18cdc8f9\\transformed\\appcompat-1.2.0\\res\\values-ar\\values-ar.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -21,41 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\6507ddaee3b678184fb79c388f30e631\\transformed\\core-1.10.1\\res\\values-ar\\values-ar.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,148,250,345,448,551,653,767",
-                        "endColumns": "92,101,94,102,102,101,113,100",
-                        "endOffsets": "143,245,340,443,546,648,762,863"
-                    },
-                    "to": {
-                        "startLines": "29,30,31,32,33,34,35,59",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "2758,2851,2953,3048,3151,3254,3356,6121",
-                        "endColumns": "92,101,94,102,102,101,113,100",
-                        "endOffsets": "2846,2948,3043,3146,3249,3351,3465,6217"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\7b14cc727509ad0d379e81427d105232\\transformed\\wear-1.2.0\\res\\values-ar\\values-ar.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7",
-                        "startColumns": "4,4,4,4,4,4",
-                        "startOffsets": "55,178,300,428,528,638",
-                        "endColumns": "122,121,127,99,109,110",
-                        "endOffsets": "173,295,423,523,633,744"
-                    },
-                    "to": {
-                        "startLines": "54,55,56,57,60,61",
-                        "startColumns": "4,4,4,4,4,4",
-                        "startOffsets": "5566,5689,5811,5939,6222,6332",
-                        "endColumns": "122,121,127,99,109,110",
-                        "endOffsets": "5684,5806,5934,6034,6327,6438"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\096ed147ea460af6e6c24bbdc48bc6e2\\transformed\\jetified-play-services-base-18.0.1\\res\\values-ar\\values.xml",
+                    "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\55dbdfad36a052ac88001e643d49b4fe\\transformed\\jetified-play-services-base-18.0.1\\res\\values-ar\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -72,7 +38,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\c2136152f9f15253b8fd8aeda70399e1\\transformed\\jetified-play-services-basement-18.0.0\\res\\values-ar\\values.xml",
+                    "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\99562cb7365935e40e41479ec2321d86\\transformed\\core-1.10.1\\res\\values-ar\\values-ar.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,148,250,345,448,551,653,767",
+                        "endColumns": "92,101,94,102,102,101,113,100",
+                        "endOffsets": "143,245,340,443,546,648,762,863"
+                    },
+                    "to": {
+                        "startLines": "29,30,31,32,33,34,35,59",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "2758,2851,2953,3048,3151,3254,3356,6121",
+                        "endColumns": "92,101,94,102,102,101,113,100",
+                        "endOffsets": "2846,2948,3043,3146,3249,3351,3465,6217"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\828e6253056f11b2a474743af04bfaa5\\transformed\\jetified-play-services-basement-18.0.0\\res\\values-ar\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -86,6 +69,23 @@
                         "startOffsets": "4424",
                         "endColumns": "129",
                         "endOffsets": "4549"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\4656c82ab75cb2596b968a2d6f0ee41a\\transformed\\wear-1.2.0\\res\\values-ar\\values-ar.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "55,178,300,428,528,638",
+                        "endColumns": "122,121,127,99,109,110",
+                        "endOffsets": "173,295,423,523,633,744"
+                    },
+                    "to": {
+                        "startLines": "54,55,56,57,60,61",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "5566,5689,5811,5939,6222,6332",
+                        "endColumns": "122,121,127,99,109,110",
+                        "endOffsets": "5684,5806,5934,6034,6327,6438"
                     }
                 }
             ]

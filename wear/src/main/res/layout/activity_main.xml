@@ -24,10 +24,10 @@
 
     <TextView
         android:id="@+id/pairing_state_textview"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:fontFamily="@font/sofia_pro_semibold"
         android:text="@string/looking_for_paired_phone"
         android:textAlignment="center"
