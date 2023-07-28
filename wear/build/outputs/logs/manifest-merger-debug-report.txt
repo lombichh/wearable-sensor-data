@@ -107,7 +107,7 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\ASUS\.gradle\cache
 	android:allowBackup
 		ADDED from C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\WearableSensorData\wear\src\main\AndroidManifest.xml:11:9-35
 	android:theme
-		ADDED from C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\WearableSensorData\wear\src\main\AndroidManifest.xml:15:9-59
+		ADDED from C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\WearableSensorData\wear\src\main\AndroidManifest.xml:15:9-46
 meta-data#com.google.android.wearable.standalone
 ADDED from C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\WearableSensorData\wear\src\main\AndroidManifest.xml:17:9-19:36
 	android:value

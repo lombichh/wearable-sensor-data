@@ -717,6 +717,9 @@ color circular_progress_layout_blue
 color circular_progress_layout_green
 color circular_progress_layout_red
 color circular_progress_layout_yellow
+color colorAccent
+color colorPrimary
+color colorPrimaryDark
 color common_google_signin_btn_text_dark
 color common_google_signin_btn_text_dark_default
 color common_google_signin_btn_text_dark_disabled
@@ -738,6 +741,7 @@ color foreground_material_dark
 color foreground_material_light
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color light_green
 color material_blue_grey_800
 color material_blue_grey_900
 color material_blue_grey_950
@@ -1071,6 +1075,7 @@ drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable open_on_phone
+drawable tick
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable ws_action_item_background
@@ -1088,6 +1093,10 @@ drawable ws_switch_thumb_mtrl_16w
 drawable ws_switch_thumb_mtrl_17w
 drawable ws_switch_thumb_mtrl_18w
 drawable ws_switch_track_mtrl
+font sofia_pro_light
+font sofia_pro_medium
+font sofia_pro_regular
+font sofia_pro_semibold
 fraction confirmation_overlay_margin_above_text
 fraction confirmation_overlay_margin_side
 fraction ws_action_drawer_item_first_item_top_padding
@@ -1202,6 +1211,7 @@ id chain2
 id chains
 id checkbox
 id checked
+id checking_paired_phone_progressbar
 id chronometer
 id clockwise
 id closest
@@ -1269,7 +1279,6 @@ id image
 id immediateStop
 id included
 id info
-id info_textview
 id inner
 id invisible
 id italic
@@ -1308,12 +1317,14 @@ id onInterceptTouchReturnSwipe
 id outer
 id overshoot
 id packed
+id pairing_state_textview
 id parent
 id parentPanel
 id parentRelative
 id path
 id pathRelative
 id percent
+id phone_connected_imageview
 id position
 id postLayout
 id progress_circular
@@ -1343,7 +1354,6 @@ id search_plate
 id search_src_text
 id search_voice_btn
 id select_dialog_listview
-id sensor_textview
 id sharedValueSet
 id sharedValueUnset
 id shortcut
@@ -1574,9 +1584,11 @@ string confirmation_overlay_a11y_description_phone
 string confirmation_overlay_a11y_description_success
 string confirmation_overlay_a11y_type_image
 string install_app
+string looking_for_paired_phone
 string message_checking
 string message_installed
 string message_missing
+string phone_connected
 string search_menu_title
 string status_bar_notification_info_overflow
 string ws_action_drawer_content_description
@@ -1586,6 +1598,7 @@ style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog
 style Animation_AppCompat_DropDownUp
 style Animation_AppCompat_Tooltip
+style AppThemeCustom
 style Base_AlertDialog_AppCompat
 style Base_AlertDialog_AppCompat_Light
 style Base_Animation_AppCompat_Dialog

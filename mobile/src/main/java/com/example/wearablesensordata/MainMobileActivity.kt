@@ -79,14 +79,14 @@ class MainMobileActivity : AppCompatActivity(), OnCapabilityChangedListener,
     /*
      * When message is received from MessageClient.
      */
-    override fun onMessageReceived(p0: MessageEvent) {
-        if (p0.path == SENSOR_MESSAGE_PATH) {
-            val sensorType = p0.data[0]
+    override fun onMessageReceived(messageEvent: MessageEvent) {
+        if (messageEvent.path == SENSOR_MESSAGE_PATH) {
+            val sensorType = messageEvent.data[0]
 
             when (sensorType) {
                 SensorData.ACCELEROMETER -> {
                     val accelerometerValues =
-                        SensorData.sensorMessageToAccelerometerValues(p0.data)
+                        SensorData.sensorMessageToAccelerometerValues(messageEvent.data)
 
                     binding.accelerometerXaxisValueTextview.text = String.format("%.2f", accelerometerValues[0])
                     binding.accelerometerYaxisValueTextview.text = String.format("%.2f", accelerometerValues[1])
@@ -95,7 +95,7 @@ class MainMobileActivity : AppCompatActivity(), OnCapabilityChangedListener,
 
                 SensorData.GYROSCOPE -> {
                     val gyroscopeValues =
-                        SensorData.sensorMessageToGyroscopeValues(p0.data)
+                        SensorData.sensorMessageToGyroscopeValues(messageEvent.data)
 
                     binding.gyroscopeXaxisValueTextview.text = String.format("%.2f", gyroscopeValues[0])
                     binding.gyroscopeYaxisValueTextview.text = String.format("%.2f", gyroscopeValues[1])
@@ -104,14 +104,14 @@ class MainMobileActivity : AppCompatActivity(), OnCapabilityChangedListener,
 
                 SensorData.TEMPERATURE -> {
                     val temperatureValue =
-                        SensorData.sensorMessageToTemperatureValue(p0.data)
+                        SensorData.sensorMessageToTemperatureValue(messageEvent.data)
 
                     binding.temperatureValueTextview.text = String.format("%.1f", temperatureValue)
                 }
 
                 SensorData.LIGHT -> {
                     val lightValue =
-                        SensorData.sensorMessageToLightValue(p0.data)
+                        SensorData.sensorMessageToLightValue(messageEvent.data)
 
                     binding.lightValueTextview.text = String.format("%.1f", lightValue)
                 }

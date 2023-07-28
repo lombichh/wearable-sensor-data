@@ -47,8 +47,8 @@
 29        android:supportsRtl="true"
 29-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\WearableSensorData\wear\src\main\AndroidManifest.xml:14:9-35
 30        android:testOnly="true"
-31        android:theme="@style/Theme.AppCompat.NoActionBar" >
-31-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\WearableSensorData\wear\src\main\AndroidManifest.xml:15:9-59
+31        android:theme="@style/AppThemeCustom" >
+31-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\WearableSensorData\wear\src\main\AndroidManifest.xml:15:9-46
 32        <meta-data
 32-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\WearableSensorData\wear\src\main\AndroidManifest.xml:17:9-19:36
 33            android:name="com.google.android.wearable.standalone"

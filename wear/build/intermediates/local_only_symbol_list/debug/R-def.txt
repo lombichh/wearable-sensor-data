@@ -1,12 +1,25 @@
 R_DEF: Internal format may change without notice
 local
 array android_wear_capabilities
-id info_textview
-id sensor_textview
+color colorAccent
+color colorPrimary
+color colorPrimaryDark
+color light_green
+drawable tick
+font sofia_pro_light
+font sofia_pro_medium
+font sofia_pro_regular
+font sofia_pro_semibold
+id checking_paired_phone_progressbar
+id pairing_state_textview
+id phone_connected_imageview
 layout activity_main
 mipmap ic_launcher
 string app_name
 string install_app
+string looking_for_paired_phone
 string message_checking
 string message_installed
 string message_missing
+string phone_connected
+style AppThemeCustom

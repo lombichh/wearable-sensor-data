@@ -34,8 +34,6 @@ class SensorForegroundService : Service(), CapabilityClient.OnCapabilityChangedL
 
     // Capability vars
     private lateinit var capabilityClient: CapabilityClient
-    private lateinit var remoteActivityHelper: RemoteActivityHelper
-
     private var androidPhoneNodeWithApp: Node? = null
 
     // Sensor vars
@@ -54,7 +52,7 @@ class SensorForegroundService : Service(), CapabilityClient.OnCapabilityChangedL
     override fun onCreate() {
         super.onCreate()
 
-        initMobileAPIs()
+        capabilityClient = Wearable.getCapabilityClient(this)
         initSensors()
     }
 
@@ -183,7 +181,7 @@ class SensorForegroundService : Service(), CapabilityClient.OnCapabilityChangedL
     /*
      * When sensor accuracy changes.
      */
-    override fun onAccuracyChanged(p0: Sensor?, p1: Int) {}
+    override fun onAccuracyChanged(sensor: Sensor?, p1: Int) {}
 
     private fun createNotificationChannel() {
         val channel = NotificationChannel(
@@ -194,11 +192,6 @@ class SensorForegroundService : Service(), CapabilityClient.OnCapabilityChangedL
         val notificationManager =
             getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         notificationManager.createNotificationChannel(channel)
-    }
-
-    private fun initMobileAPIs() {
-        capabilityClient = Wearable.getCapabilityClient(this)
-        remoteActivityHelper = RemoteActivityHelper(this)
     }
 
     private fun initSensors() {
@@ -292,11 +285,6 @@ class SensorForegroundService : Service(), CapabilityClient.OnCapabilityChangedL
     companion object {
         // Name of capability listed in Phone app's wear.xml.
         private const val CAPABILITY_PHONE_APP = "verify_remote_example_phone_app"
-
-        // Links to Android mobile app (Play Store).
-        // TODO: Replace with actual link.
-        private const val PLAY_STORE_APP_URI =
-            "market://details?id=com.example.wearablesensordata"
 
         private const val SENSOR_MESSAGE_PATH = "/sensor"
     }

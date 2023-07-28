@@ -4,7 +4,9 @@ package com.example.wearablesensordata.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ScrollView;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,24 +19,29 @@ import java.lang.String;
 
 public final class ActivityMainBinding implements ViewBinding {
   @NonNull
-  private final ScrollView rootView;
+  private final LinearLayout rootView;
 
   @NonNull
-  public final TextView infoTextview;
+  public final ProgressBar checkingPairedPhoneProgressbar;
 
   @NonNull
-  public final TextView sensorTextview;
+  public final TextView pairingStateTextview;
 
-  private ActivityMainBinding(@NonNull ScrollView rootView, @NonNull TextView infoTextview,
-      @NonNull TextView sensorTextview) {
+  @NonNull
+  public final ImageView phoneConnectedImageview;
+
+  private ActivityMainBinding(@NonNull LinearLayout rootView,
+      @NonNull ProgressBar checkingPairedPhoneProgressbar, @NonNull TextView pairingStateTextview,
+      @NonNull ImageView phoneConnectedImageview) {
     this.rootView = rootView;
-    this.infoTextview = infoTextview;
-    this.sensorTextview = sensorTextview;
+    this.checkingPairedPhoneProgressbar = checkingPairedPhoneProgressbar;
+    this.pairingStateTextview = pairingStateTextview;
+    this.phoneConnectedImageview = phoneConnectedImageview;
   }
 
   @Override
   @NonNull
-  public ScrollView getRoot() {
+  public LinearLayout getRoot() {
     return rootView;
   }
 
@@ -59,19 +66,26 @@ public final class ActivityMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.info_textview;
-      TextView infoTextview = ViewBindings.findChildViewById(rootView, id);
-      if (infoTextview == null) {
+      id = R.id.checking_paired_phone_progressbar;
+      ProgressBar checkingPairedPhoneProgressbar = ViewBindings.findChildViewById(rootView, id);
+      if (checkingPairedPhoneProgressbar == null) {
         break missingId;
       }
 
-      id = R.id.sensor_textview;
-      TextView sensorTextview = ViewBindings.findChildViewById(rootView, id);
-      if (sensorTextview == null) {
+      id = R.id.pairing_state_textview;
+      TextView pairingStateTextview = ViewBindings.findChildViewById(rootView, id);
+      if (pairingStateTextview == null) {
         break missingId;
       }
 
-      return new ActivityMainBinding((ScrollView) rootView, infoTextview, sensorTextview);
+      id = R.id.phone_connected_imageview;
+      ImageView phoneConnectedImageview = ViewBindings.findChildViewById(rootView, id);
+      if (phoneConnectedImageview == null) {
+        break missingId;
+      }
+
+      return new ActivityMainBinding((LinearLayout) rootView, checkingPairedPhoneProgressbar,
+          pairingStateTextview, phoneConnectedImageview);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
