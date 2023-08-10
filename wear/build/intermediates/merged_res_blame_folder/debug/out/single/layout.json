@@ -2,5 +2,9 @@
     {
         "merged": "com.example.wearablesensordata.wear-mergeDebugResources-30:/layout/activity_main.xml",
         "source": "com.example.wearablesensordata.wear-main-33:/layout/activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.2.1\\com.example.wearablesensordata.wear-mergeDebugResources-30:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.2.1\\com.example.wearablesensordata.wear-main-33:\\layout\\activity_main.xml"
     }
 ]

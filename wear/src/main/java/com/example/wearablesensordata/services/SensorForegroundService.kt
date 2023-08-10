@@ -40,13 +40,23 @@ class SensorForegroundService : Service(), CapabilityClient.OnCapabilityChangedL
 
     private var accelerometerSensor: Sensor? = null
     private var gyroscopeSensor: Sensor? = null
-    private var temperatureSensor: Sensor? = null
+    private var magnetometerSensor: Sensor? = null
+    private var heartRateSensor: Sensor? = null
     private var lightSensor: Sensor? = null
+    private var temperatureSensor: Sensor? = null
+    private var humiditySensor: Sensor? = null
+    private var proximitySensor: Sensor? = null
+    private var pressureSensor: Sensor? = null
 
     private var lastAccelerometerUpdateTimestamp: Long? = null
     private var lastGyroscopeUpdateTimestamp: Long? = null
-    private var lastTemperatureUpdateTimestamp: Long? = null
+    private var lastMagnetometerUpdateTimestamp: Long? = null
+    private var lastHeartRateUpdateTimestamp: Long? = null
     private var lastLightUpdateTimestamp: Long? = null
+    private var lastTemperatureUpdateTimestamp: Long? = null
+    private var lastHumidityUpdateTimestamp: Long? = null
+    private var lastProximityUpdateTimestamp: Long? = null
+    private var lastPressureUpdateTimestamp: Long? = null
 
     override fun onCreate() {
         super.onCreate()
@@ -144,19 +154,38 @@ class SensorForegroundService : Service(), CapabilityClient.OnCapabilityChangedL
                     }
                 }
 
-                Sensor.TYPE_AMBIENT_TEMPERATURE -> {
+                Sensor.TYPE_MAGNETIC_FIELD -> {
+                    // Check if last sensor update was sent more than INTERVAL second ago.
+                    val actualTimestamp = sensorEvent.timestamp
+
+                    if (lastMagnetometerUpdateTimestamp == null ||
+                        actualTimestamp - lastMagnetometerUpdateTimestamp!!
+                        >= SensorData.SENSOR_MESSAGE_MINIMUM_INTERVAL
+                    ) {
+                        val sensorMessage = SensorData.magnetometerValuesToSensorMessage(
+                            sensorEvent.values[0],
+                            sensorEvent.values[1],
+                            sensorEvent.values[2]
+                        )
+                        sendSensorMessageToPhone(sensorMessage)
+
+                        lastMagnetometerUpdateTimestamp = actualTimestamp
+                    }
+                }
+
+                Sensor.TYPE_HEART_RATE -> {
                     // Check if last sensor update was sent more than INTERVAL second ago.
                     val actualTime = sensorEvent.timestamp
 
-                    if (lastTemperatureUpdateTimestamp == null ||
-                        actualTime - lastTemperatureUpdateTimestamp!!
+                    if (lastHeartRateUpdateTimestamp == null ||
+                        actualTime - lastHeartRateUpdateTimestamp!!
                         >= SensorData.SENSOR_MESSAGE_MINIMUM_INTERVAL
                     ) {
                         val sensorMessage =
-                            SensorData.temperatureValueToSensorMessage(sensorEvent.values[0])
+                            SensorData.heartRateValueToSensorMessage(sensorEvent.values[0])
                         sendSensorMessageToPhone(sensorMessage)
 
-                        lastTemperatureUpdateTimestamp = actualTime
+                        lastHeartRateUpdateTimestamp = actualTime
                     }
                 }
 
@@ -173,6 +202,70 @@ class SensorForegroundService : Service(), CapabilityClient.OnCapabilityChangedL
                         sendSensorMessageToPhone(sensorMessage)
 
                         lastLightUpdateTimestamp = actualTime
+                    }
+                }
+
+                Sensor.TYPE_AMBIENT_TEMPERATURE -> {
+                    // Check if last sensor update was sent more than INTERVAL second ago.
+                    val actualTime = sensorEvent.timestamp
+
+                    if (lastTemperatureUpdateTimestamp == null ||
+                        actualTime - lastTemperatureUpdateTimestamp!!
+                        >= SensorData.SENSOR_MESSAGE_MINIMUM_INTERVAL
+                    ) {
+                        val sensorMessage =
+                            SensorData.temperatureValueToSensorMessage(sensorEvent.values[0])
+                        sendSensorMessageToPhone(sensorMessage)
+
+                        lastTemperatureUpdateTimestamp = actualTime
+                    }
+                }
+
+                Sensor.TYPE_RELATIVE_HUMIDITY -> {
+                    // Check if last sensor update was sent more than INTERVAL second ago.
+                    val actualTime = sensorEvent.timestamp
+
+                    if (lastHumidityUpdateTimestamp == null ||
+                        actualTime - lastHumidityUpdateTimestamp!!
+                        >= SensorData.SENSOR_MESSAGE_MINIMUM_INTERVAL
+                    ) {
+                        val sensorMessage =
+                            SensorData.humidityValueToSensorMessage(sensorEvent.values[0])
+                        sendSensorMessageToPhone(sensorMessage)
+
+                        lastHumidityUpdateTimestamp = actualTime
+                    }
+                }
+
+                Sensor.TYPE_PROXIMITY -> {
+                    // Check if last sensor update was sent more than INTERVAL second ago.
+                    val actualTime = sensorEvent.timestamp
+
+                    if (lastProximityUpdateTimestamp == null ||
+                        actualTime - lastProximityUpdateTimestamp!!
+                        >= SensorData.SENSOR_MESSAGE_MINIMUM_INTERVAL
+                    ) {
+                        val sensorMessage =
+                            SensorData.proximityValueToSensorMessage(sensorEvent.values[0])
+                        sendSensorMessageToPhone(sensorMessage)
+
+                        lastProximityUpdateTimestamp = actualTime
+                    }
+                }
+
+                Sensor.TYPE_PRESSURE -> {
+                    // Check if last sensor update was sent more than INTERVAL second ago.
+                    val actualTime = sensorEvent.timestamp
+
+                    if (lastPressureUpdateTimestamp == null ||
+                        actualTime - lastPressureUpdateTimestamp!!
+                        >= SensorData.SENSOR_MESSAGE_MINIMUM_INTERVAL
+                    ) {
+                        val sensorMessage =
+                            SensorData.pressureValueToSensorMessage(sensorEvent.values[0])
+                        sendSensorMessageToPhone(sensorMessage)
+
+                        lastPressureUpdateTimestamp = actualTime
                     }
                 }
             }
@@ -200,8 +293,13 @@ class SensorForegroundService : Service(), CapabilityClient.OnCapabilityChangedL
 
         accelerometerSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)
         gyroscopeSensor = sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE)
-        temperatureSensor = sensorManager.getDefaultSensor(Sensor.TYPE_AMBIENT_TEMPERATURE)
+        magnetometerSensor = sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD)
+        heartRateSensor = sensorManager.getDefaultSensor(Sensor.TYPE_HEART_RATE)
         lightSensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT)
+        temperatureSensor = sensorManager.getDefaultSensor(Sensor.TYPE_AMBIENT_TEMPERATURE)
+        humiditySensor = sensorManager.getDefaultSensor(Sensor.TYPE_RELATIVE_HUMIDITY)
+        proximitySensor = sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY)
+        pressureSensor = sensorManager.getDefaultSensor(Sensor.TYPE_PRESSURE)
     }
 
     private suspend fun checkIfPhoneHasApp() {
@@ -248,10 +346,15 @@ class SensorForegroundService : Service(), CapabilityClient.OnCapabilityChangedL
                 SensorManager.SENSOR_DELAY_NORMAL
             )
         }
-        temperatureSensor?.also { temperature ->
+        magnetometerSensor?.also { magnetometer ->
             sensorManager.registerListener(
-                this,
-                temperature,
+                this, magnetometer,
+                SensorManager.SENSOR_DELAY_NORMAL
+            )
+        }
+        heartRateSensor?.also { heartRate ->
+            sensorManager.registerListener(
+                this, heartRate,
                 SensorManager.SENSOR_DELAY_NORMAL
             )
         }
@@ -259,6 +362,34 @@ class SensorForegroundService : Service(), CapabilityClient.OnCapabilityChangedL
             sensorManager.registerListener(
                 this,
                 light,
+                SensorManager.SENSOR_DELAY_NORMAL
+            )
+        }
+        temperatureSensor?.also { temperature ->
+            sensorManager.registerListener(
+                this,
+                temperature,
+                SensorManager.SENSOR_DELAY_NORMAL
+            )
+        }
+        humiditySensor?.also { humidity ->
+            sensorManager.registerListener(
+                this,
+                humidity,
+                SensorManager.SENSOR_DELAY_NORMAL
+            )
+        }
+        proximitySensor?.also { proximity ->
+            sensorManager.registerListener(
+                this,
+                proximity,
+                SensorManager.SENSOR_DELAY_NORMAL
+            )
+        }
+        pressureSensor?.also { pressure ->
+            sensorManager.registerListener(
+                this,
+                pressure,
                 SensorManager.SENSOR_DELAY_NORMAL
             )
         }

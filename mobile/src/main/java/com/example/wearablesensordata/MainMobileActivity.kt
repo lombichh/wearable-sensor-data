@@ -108,11 +108,23 @@ class MainMobileActivity : AppCompatActivity(), OnCapabilityChangedListener,
                         String.format("%.2f", gyroscopeValues[2])
                 }
 
-                SensorData.TEMPERATURE -> {
-                    val temperatureValue =
-                        SensorData.sensorMessageToTemperatureValue(messageEvent.data)
+                SensorData.MAGNETOMETER -> {
+                    val magnetometerValues =
+                        SensorData.sensorMessageToMagnetometerValues(messageEvent.data)
 
-                    binding.temperatureValueTextview.text = String.format("%.1f", temperatureValue)
+                    binding.magnetometerXaxisValueTextview.text =
+                        String.format("%.2f", magnetometerValues[0])
+                    binding.magnetometerYaxisValueTextview.text =
+                        String.format("%.2f", magnetometerValues[1])
+                    binding.magnetometerZaxisValueTextview.text =
+                        String.format("%.2f", magnetometerValues[2])
+                }
+
+                SensorData.HEART_RATE -> {
+                    val heartRateValue =
+                        SensorData.sensorMessageToHeartRateValue(messageEvent.data)
+
+                    binding.heartRateValueTextview.text = heartRateValue.toString()
                 }
 
                 SensorData.LIGHT -> {
@@ -120,6 +132,34 @@ class MainMobileActivity : AppCompatActivity(), OnCapabilityChangedListener,
                         SensorData.sensorMessageToLightValue(messageEvent.data)
 
                     binding.lightValueTextview.text = String.format("%.1f", lightValue)
+                }
+
+                SensorData.TEMPERATURE -> {
+                    val temperatureValue =
+                        SensorData.sensorMessageToTemperatureValue(messageEvent.data)
+
+                    binding.temperatureValueTextview.text = String.format("%.1f", temperatureValue)
+                }
+
+                SensorData.HUMIDITY -> {
+                    val humidityValue =
+                        SensorData.sensorMessageToHumidityValue(messageEvent.data)
+
+                    binding.humidityValueTextview.text = String.format("%.1f", humidityValue)
+                }
+
+                SensorData.PROXIMITY -> {
+                    val proximityValue =
+                        SensorData.sensorMessageToProximityValue(messageEvent.data)
+
+                    binding.proximityValueTextview.text = String.format("%.1f", proximityValue)
+                }
+
+                SensorData.PRESSURE -> {
+                    val pressureValue =
+                        SensorData.sensorMessageToPressureValue(messageEvent.data)
+
+                    binding.pressureValueTextview.text = String.format("%.1f", pressureValue)
                 }
             }
         }

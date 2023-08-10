@@ -98,10 +98,37 @@ public final class ActivityMainBinding implements ViewBinding {
   public final TextView gyroscopeZaxisValueTextview;
 
   @NonNull
+  public final TextView heartRateTextview;
+
+  @NonNull
+  public final TextView heartRateUnitTextview;
+
+  @NonNull
+  public final LinearLayout heartRateValueLayout;
+
+  @NonNull
+  public final TextView heartRateValueTextview;
+
+  @NonNull
+  public final TextView humidityTextview;
+
+  @NonNull
+  public final TextView humidityUnitTextview;
+
+  @NonNull
+  public final LinearLayout humidityValueLayout;
+
+  @NonNull
+  public final TextView humidityValueTextview;
+
+  @NonNull
   public final ImageView imageView;
 
   @NonNull
   public final Button installAppButton;
+
+  @NonNull
+  public final TextView lightTextview;
 
   @NonNull
   public final TextView lightUnitTextview;
@@ -113,7 +140,52 @@ public final class ActivityMainBinding implements ViewBinding {
   public final TextView lightValueTextview;
 
   @NonNull
-  public final TextView ligtTextview;
+  public final ConstraintLayout magnetometerLayout;
+
+  @NonNull
+  public final TextView magnetometerTitleTextview;
+
+  @NonNull
+  public final TextView magnetometerXaxisTextview;
+
+  @NonNull
+  public final TextView magnetometerXaxisValueTextview;
+
+  @NonNull
+  public final TextView magnetometerYaxisTextview;
+
+  @NonNull
+  public final TextView magnetometerYaxisValueTextview;
+
+  @NonNull
+  public final TextView magnetometerZaxisTextview;
+
+  @NonNull
+  public final TextView magnetometerZaxisValueTextview;
+
+  @NonNull
+  public final TextView pressureTextview;
+
+  @NonNull
+  public final TextView pressureUnitTextview;
+
+  @NonNull
+  public final LinearLayout pressureValueLayout;
+
+  @NonNull
+  public final TextView pressureValueTextview;
+
+  @NonNull
+  public final TextView proximityTextview;
+
+  @NonNull
+  public final TextView proximityUnitTextview;
+
+  @NonNull
+  public final LinearLayout proximityValueLayout;
+
+  @NonNull
+  public final TextView proximityValueTextview;
 
   @NonNull
   public final TextView temperatureTextview;
@@ -153,10 +225,22 @@ public final class ActivityMainBinding implements ViewBinding {
       @NonNull TextView gyroscopeTitleTextview, @NonNull TextView gyroscopeXaxisTextview,
       @NonNull TextView gyroscopeXaxisValueTextview, @NonNull TextView gyroscopeYaxisTextview,
       @NonNull TextView gyroscopeYaxisValueTextview, @NonNull TextView gyroscopeZaxisTextview,
-      @NonNull TextView gyroscopeZaxisValueTextview, @NonNull ImageView imageView,
-      @NonNull Button installAppButton, @NonNull TextView lightUnitTextview,
-      @NonNull LinearLayout lightValueLayout, @NonNull TextView lightValueTextview,
-      @NonNull TextView ligtTextview, @NonNull TextView temperatureTextview,
+      @NonNull TextView gyroscopeZaxisValueTextview, @NonNull TextView heartRateTextview,
+      @NonNull TextView heartRateUnitTextview, @NonNull LinearLayout heartRateValueLayout,
+      @NonNull TextView heartRateValueTextview, @NonNull TextView humidityTextview,
+      @NonNull TextView humidityUnitTextview, @NonNull LinearLayout humidityValueLayout,
+      @NonNull TextView humidityValueTextview, @NonNull ImageView imageView,
+      @NonNull Button installAppButton, @NonNull TextView lightTextview,
+      @NonNull TextView lightUnitTextview, @NonNull LinearLayout lightValueLayout,
+      @NonNull TextView lightValueTextview, @NonNull ConstraintLayout magnetometerLayout,
+      @NonNull TextView magnetometerTitleTextview, @NonNull TextView magnetometerXaxisTextview,
+      @NonNull TextView magnetometerXaxisValueTextview, @NonNull TextView magnetometerYaxisTextview,
+      @NonNull TextView magnetometerYaxisValueTextview, @NonNull TextView magnetometerZaxisTextview,
+      @NonNull TextView magnetometerZaxisValueTextview, @NonNull TextView pressureTextview,
+      @NonNull TextView pressureUnitTextview, @NonNull LinearLayout pressureValueLayout,
+      @NonNull TextView pressureValueTextview, @NonNull TextView proximityTextview,
+      @NonNull TextView proximityUnitTextview, @NonNull LinearLayout proximityValueLayout,
+      @NonNull TextView proximityValueTextview, @NonNull TextView temperatureTextview,
       @NonNull TextView temperatureUnitTextview, @NonNull LinearLayout temperatureValueLayout,
       @NonNull TextView temperatureValueTextview, @NonNull TextView titleTextview1,
       @NonNull TextView titleTextview2, @NonNull TextView titleTextview3) {
@@ -185,12 +269,36 @@ public final class ActivityMainBinding implements ViewBinding {
     this.gyroscopeYaxisValueTextview = gyroscopeYaxisValueTextview;
     this.gyroscopeZaxisTextview = gyroscopeZaxisTextview;
     this.gyroscopeZaxisValueTextview = gyroscopeZaxisValueTextview;
+    this.heartRateTextview = heartRateTextview;
+    this.heartRateUnitTextview = heartRateUnitTextview;
+    this.heartRateValueLayout = heartRateValueLayout;
+    this.heartRateValueTextview = heartRateValueTextview;
+    this.humidityTextview = humidityTextview;
+    this.humidityUnitTextview = humidityUnitTextview;
+    this.humidityValueLayout = humidityValueLayout;
+    this.humidityValueTextview = humidityValueTextview;
     this.imageView = imageView;
     this.installAppButton = installAppButton;
+    this.lightTextview = lightTextview;
     this.lightUnitTextview = lightUnitTextview;
     this.lightValueLayout = lightValueLayout;
     this.lightValueTextview = lightValueTextview;
-    this.ligtTextview = ligtTextview;
+    this.magnetometerLayout = magnetometerLayout;
+    this.magnetometerTitleTextview = magnetometerTitleTextview;
+    this.magnetometerXaxisTextview = magnetometerXaxisTextview;
+    this.magnetometerXaxisValueTextview = magnetometerXaxisValueTextview;
+    this.magnetometerYaxisTextview = magnetometerYaxisTextview;
+    this.magnetometerYaxisValueTextview = magnetometerYaxisValueTextview;
+    this.magnetometerZaxisTextview = magnetometerZaxisTextview;
+    this.magnetometerZaxisValueTextview = magnetometerZaxisValueTextview;
+    this.pressureTextview = pressureTextview;
+    this.pressureUnitTextview = pressureUnitTextview;
+    this.pressureValueLayout = pressureValueLayout;
+    this.pressureValueTextview = pressureValueTextview;
+    this.proximityTextview = proximityTextview;
+    this.proximityUnitTextview = proximityUnitTextview;
+    this.proximityValueLayout = proximityValueLayout;
+    this.proximityValueTextview = proximityValueTextview;
     this.temperatureTextview = temperatureTextview;
     this.temperatureUnitTextview = temperatureUnitTextview;
     this.temperatureValueLayout = temperatureValueLayout;
@@ -371,6 +479,54 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.heart_rate_textview;
+      TextView heartRateTextview = ViewBindings.findChildViewById(rootView, id);
+      if (heartRateTextview == null) {
+        break missingId;
+      }
+
+      id = R.id.heart_rate_unit_textview;
+      TextView heartRateUnitTextview = ViewBindings.findChildViewById(rootView, id);
+      if (heartRateUnitTextview == null) {
+        break missingId;
+      }
+
+      id = R.id.heart_rate_value_layout;
+      LinearLayout heartRateValueLayout = ViewBindings.findChildViewById(rootView, id);
+      if (heartRateValueLayout == null) {
+        break missingId;
+      }
+
+      id = R.id.heart_rate_value_textview;
+      TextView heartRateValueTextview = ViewBindings.findChildViewById(rootView, id);
+      if (heartRateValueTextview == null) {
+        break missingId;
+      }
+
+      id = R.id.humidity_textview;
+      TextView humidityTextview = ViewBindings.findChildViewById(rootView, id);
+      if (humidityTextview == null) {
+        break missingId;
+      }
+
+      id = R.id.humidity_unit_textview;
+      TextView humidityUnitTextview = ViewBindings.findChildViewById(rootView, id);
+      if (humidityUnitTextview == null) {
+        break missingId;
+      }
+
+      id = R.id.humidity_value_layout;
+      LinearLayout humidityValueLayout = ViewBindings.findChildViewById(rootView, id);
+      if (humidityValueLayout == null) {
+        break missingId;
+      }
+
+      id = R.id.humidity_value_textview;
+      TextView humidityValueTextview = ViewBindings.findChildViewById(rootView, id);
+      if (humidityValueTextview == null) {
+        break missingId;
+      }
+
       id = R.id.imageView;
       ImageView imageView = ViewBindings.findChildViewById(rootView, id);
       if (imageView == null) {
@@ -380,6 +536,12 @@ public final class ActivityMainBinding implements ViewBinding {
       id = R.id.install_app_button;
       Button installAppButton = ViewBindings.findChildViewById(rootView, id);
       if (installAppButton == null) {
+        break missingId;
+      }
+
+      id = R.id.light_textview;
+      TextView lightTextview = ViewBindings.findChildViewById(rootView, id);
+      if (lightTextview == null) {
         break missingId;
       }
 
@@ -401,9 +563,99 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.ligt_textview;
-      TextView ligtTextview = ViewBindings.findChildViewById(rootView, id);
-      if (ligtTextview == null) {
+      id = R.id.magnetometer_layout;
+      ConstraintLayout magnetometerLayout = ViewBindings.findChildViewById(rootView, id);
+      if (magnetometerLayout == null) {
+        break missingId;
+      }
+
+      id = R.id.magnetometer_title_textview;
+      TextView magnetometerTitleTextview = ViewBindings.findChildViewById(rootView, id);
+      if (magnetometerTitleTextview == null) {
+        break missingId;
+      }
+
+      id = R.id.magnetometer_xaxis_textview;
+      TextView magnetometerXaxisTextview = ViewBindings.findChildViewById(rootView, id);
+      if (magnetometerXaxisTextview == null) {
+        break missingId;
+      }
+
+      id = R.id.magnetometer_xaxis_value_textview;
+      TextView magnetometerXaxisValueTextview = ViewBindings.findChildViewById(rootView, id);
+      if (magnetometerXaxisValueTextview == null) {
+        break missingId;
+      }
+
+      id = R.id.magnetometer_yaxis_textview;
+      TextView magnetometerYaxisTextview = ViewBindings.findChildViewById(rootView, id);
+      if (magnetometerYaxisTextview == null) {
+        break missingId;
+      }
+
+      id = R.id.magnetometer_yaxis_value_textview;
+      TextView magnetometerYaxisValueTextview = ViewBindings.findChildViewById(rootView, id);
+      if (magnetometerYaxisValueTextview == null) {
+        break missingId;
+      }
+
+      id = R.id.magnetometer_zaxis_textview;
+      TextView magnetometerZaxisTextview = ViewBindings.findChildViewById(rootView, id);
+      if (magnetometerZaxisTextview == null) {
+        break missingId;
+      }
+
+      id = R.id.magnetometer_zaxis_value_textview;
+      TextView magnetometerZaxisValueTextview = ViewBindings.findChildViewById(rootView, id);
+      if (magnetometerZaxisValueTextview == null) {
+        break missingId;
+      }
+
+      id = R.id.pressure_textview;
+      TextView pressureTextview = ViewBindings.findChildViewById(rootView, id);
+      if (pressureTextview == null) {
+        break missingId;
+      }
+
+      id = R.id.pressure_unit_textview;
+      TextView pressureUnitTextview = ViewBindings.findChildViewById(rootView, id);
+      if (pressureUnitTextview == null) {
+        break missingId;
+      }
+
+      id = R.id.pressure_value_layout;
+      LinearLayout pressureValueLayout = ViewBindings.findChildViewById(rootView, id);
+      if (pressureValueLayout == null) {
+        break missingId;
+      }
+
+      id = R.id.pressure_value_textview;
+      TextView pressureValueTextview = ViewBindings.findChildViewById(rootView, id);
+      if (pressureValueTextview == null) {
+        break missingId;
+      }
+
+      id = R.id.proximity_textview;
+      TextView proximityTextview = ViewBindings.findChildViewById(rootView, id);
+      if (proximityTextview == null) {
+        break missingId;
+      }
+
+      id = R.id.proximity_unit_textview;
+      TextView proximityUnitTextview = ViewBindings.findChildViewById(rootView, id);
+      if (proximityUnitTextview == null) {
+        break missingId;
+      }
+
+      id = R.id.proximity_value_layout;
+      LinearLayout proximityValueLayout = ViewBindings.findChildViewById(rootView, id);
+      if (proximityValueLayout == null) {
+        break missingId;
+      }
+
+      id = R.id.proximity_value_textview;
+      TextView proximityValueTextview = ViewBindings.findChildViewById(rootView, id);
+      if (proximityValueTextview == null) {
         break missingId;
       }
 
@@ -458,8 +710,15 @@ public final class ActivityMainBinding implements ViewBinding {
           deviceConnectedTextview, flexboxLayout, gyroscopeLayout, gyroscopeTitleTextview,
           gyroscopeXaxisTextview, gyroscopeXaxisValueTextview, gyroscopeYaxisTextview,
           gyroscopeYaxisValueTextview, gyroscopeZaxisTextview, gyroscopeZaxisValueTextview,
-          imageView, installAppButton, lightUnitTextview, lightValueLayout, lightValueTextview,
-          ligtTextview, temperatureTextview, temperatureUnitTextview, temperatureValueLayout,
+          heartRateTextview, heartRateUnitTextview, heartRateValueLayout, heartRateValueTextview,
+          humidityTextview, humidityUnitTextview, humidityValueLayout, humidityValueTextview,
+          imageView, installAppButton, lightTextview, lightUnitTextview, lightValueLayout,
+          lightValueTextview, magnetometerLayout, magnetometerTitleTextview,
+          magnetometerXaxisTextview, magnetometerXaxisValueTextview, magnetometerYaxisTextview,
+          magnetometerYaxisValueTextview, magnetometerZaxisTextview, magnetometerZaxisValueTextview,
+          pressureTextview, pressureUnitTextview, pressureValueLayout, pressureValueTextview,
+          proximityTextview, proximityUnitTextview, proximityValueLayout, proximityValueTextview,
+          temperatureTextview, temperatureUnitTextview, temperatureValueLayout,
           temperatureValueTextview, titleTextview1, titleTextview2, titleTextview3);
     }
     String missingId = rootView.getResources().getResourceName(id);

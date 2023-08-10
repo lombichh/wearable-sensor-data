@@ -4,7 +4,7 @@
             "outputFile": "com.example.wearablesensordata.mobile-mergeDebugResources-30:/values-land/values-land.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\552c19b915a356761bb75394ffcb32f3\\transformed\\appcompat-1.6.1\\res\\values-land\\values-land.xml",
+                    "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\6b35238369fedd30d46452eecf807ce8\\transformed\\appcompat-1.6.1\\res\\values-land\\values-land.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",
