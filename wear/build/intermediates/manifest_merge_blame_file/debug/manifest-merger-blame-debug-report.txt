@@ -46,116 +46,115 @@
 28-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\WearableSensorData\wear\src\main\AndroidManifest.xml:13:9-41
 29        android:supportsRtl="true"
 29-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\WearableSensorData\wear\src\main\AndroidManifest.xml:14:9-35
-30        android:testOnly="true"
-31        android:theme="@style/AppThemeCustom" >
-31-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\WearableSensorData\wear\src\main\AndroidManifest.xml:15:9-46
-32        <meta-data
-32-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\WearableSensorData\wear\src\main\AndroidManifest.xml:17:9-19:36
-33            android:name="com.google.android.wearable.standalone"
-33-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\WearableSensorData\wear\src\main\AndroidManifest.xml:18:13-66
-34            android:value="true" />
-34-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\WearableSensorData\wear\src\main\AndroidManifest.xml:19:13-33
-35
-36        <activity
-36-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\WearableSensorData\wear\src\main\AndroidManifest.xml:21:9-29:20
-37            android:name="com.example.wearablesensordata.MainWearActivity"
-37-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\WearableSensorData\wear\src\main\AndroidManifest.xml:22:13-75
-38            android:exported="true"
-38-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\WearableSensorData\wear\src\main\AndroidManifest.xml:23:13-36
-39            android:label="@string/app_name" >
-39-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\WearableSensorData\wear\src\main\AndroidManifest.xml:24:13-45
-40            <intent-filter>
-40-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\WearableSensorData\wear\src\main\AndroidManifest.xml:25:13-28:29
-41                <action android:name="android.intent.action.MAIN" />
-41-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\WearableSensorData\wear\src\main\AndroidManifest.xml:26:17-69
-41-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\WearableSensorData\wear\src\main\AndroidManifest.xml:26:25-66
-42
-43                <category android:name="android.intent.category.LAUNCHER" />
-43-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\WearableSensorData\wear\src\main\AndroidManifest.xml:27:17-77
-43-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\WearableSensorData\wear\src\main\AndroidManifest.xml:27:27-74
-44            </intent-filter>
-45        </activity>
-46
-47        <service android:name="com.example.wearablesensordata.services.SensorForegroundService" />
-47-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\WearableSensorData\wear\src\main\AndroidManifest.xml:31:9-69
-47-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\WearableSensorData\wear\src\main\AndroidManifest.xml:31:18-66
-48
-49        <uses-library
-49-->[androidx.wear:wear:1.2.0] C:\Users\ASUS\.gradle\caches\transforms-3\4656c82ab75cb2596b968a2d6f0ee41a\transformed\wear-1.2.0\AndroidManifest.xml:25:9-27:40
-50            android:name="com.google.android.wearable"
-50-->[androidx.wear:wear:1.2.0] C:\Users\ASUS\.gradle\caches\transforms-3\4656c82ab75cb2596b968a2d6f0ee41a\transformed\wear-1.2.0\AndroidManifest.xml:26:13-55
-51            android:required="false" />
-51-->[androidx.wear:wear:1.2.0] C:\Users\ASUS\.gradle\caches\transforms-3\4656c82ab75cb2596b968a2d6f0ee41a\transformed\wear-1.2.0\AndroidManifest.xml:27:13-37
-52
-53        <activity
-53-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\55dbdfad36a052ac88001e643d49b4fe\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
-54            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-54-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\55dbdfad36a052ac88001e643d49b4fe\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:19-85
-55            android:exported="false"
-55-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\55dbdfad36a052ac88001e643d49b4fe\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:22:19-43
-56            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-56-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\55dbdfad36a052ac88001e643d49b4fe\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:21:19-78
-57
-58        <meta-data
-58-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\ASUS\.gradle\caches\transforms-3\828e6253056f11b2a474743af04bfaa5\transformed\jetified-play-services-basement-18.0.0\AndroidManifest.xml:21:9-23:69
-59            android:name="com.google.android.gms.version"
-59-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\ASUS\.gradle\caches\transforms-3\828e6253056f11b2a474743af04bfaa5\transformed\jetified-play-services-basement-18.0.0\AndroidManifest.xml:22:13-58
-60            android:value="@integer/google_play_services_version" />
-60-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\ASUS\.gradle\caches\transforms-3\828e6253056f11b2a474743af04bfaa5\transformed\jetified-play-services-basement-18.0.0\AndroidManifest.xml:23:13-66
-61
-62        <provider
-62-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-3\821714931530422234587f95edc8221b\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:24:9-32:20
-63            android:name="androidx.startup.InitializationProvider"
-63-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-3\821714931530422234587f95edc8221b\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:25:13-67
-64            android:authorities="com.example.wearablesensordata.androidx-startup"
-64-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-3\821714931530422234587f95edc8221b\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:26:13-68
-65            android:exported="false" >
-65-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-3\821714931530422234587f95edc8221b\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:27:13-37
-66            <meta-data
-66-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-3\821714931530422234587f95edc8221b\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
-67                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-67-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-3\821714931530422234587f95edc8221b\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
-68                android:value="androidx.startup" />
-68-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-3\821714931530422234587f95edc8221b\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
-69        </provider>
-70
-71        <receiver
-71-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-3\821714931530422234587f95edc8221b\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
-72            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-72-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-3\821714931530422234587f95edc8221b\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
-73            android:directBootAware="false"
-73-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-3\821714931530422234587f95edc8221b\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
-74            android:enabled="true"
-74-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-3\821714931530422234587f95edc8221b\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
-75            android:exported="true"
-75-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-3\821714931530422234587f95edc8221b\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
-76            android:permission="android.permission.DUMP" >
-76-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-3\821714931530422234587f95edc8221b\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
-77            <intent-filter>
-77-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-3\821714931530422234587f95edc8221b\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
-78                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-78-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-3\821714931530422234587f95edc8221b\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
-78-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-3\821714931530422234587f95edc8221b\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
-79            </intent-filter>
-80            <intent-filter>
-80-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-3\821714931530422234587f95edc8221b\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
-81                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-81-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-3\821714931530422234587f95edc8221b\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
-81-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-3\821714931530422234587f95edc8221b\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
-82            </intent-filter>
-83            <intent-filter>
-83-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-3\821714931530422234587f95edc8221b\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
-84                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-84-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-3\821714931530422234587f95edc8221b\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
-84-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-3\821714931530422234587f95edc8221b\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
-85            </intent-filter>
-86            <intent-filter>
-86-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-3\821714931530422234587f95edc8221b\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
-87                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-87-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-3\821714931530422234587f95edc8221b\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
-87-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-3\821714931530422234587f95edc8221b\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
-88            </intent-filter>
-89        </receiver>
-90    </application>
-91
-92</manifest>
+30        android:theme="@style/AppThemeCustom" >
+30-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\WearableSensorData\wear\src\main\AndroidManifest.xml:15:9-46
+31        <meta-data
+31-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\WearableSensorData\wear\src\main\AndroidManifest.xml:17:9-19:36
+32            android:name="com.google.android.wearable.standalone"
+32-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\WearableSensorData\wear\src\main\AndroidManifest.xml:18:13-66
+33            android:value="true" />
+33-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\WearableSensorData\wear\src\main\AndroidManifest.xml:19:13-33
+34
+35        <activity
+35-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\WearableSensorData\wear\src\main\AndroidManifest.xml:21:9-29:20
+36            android:name="com.example.wearablesensordata.MainWearActivity"
+36-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\WearableSensorData\wear\src\main\AndroidManifest.xml:22:13-75
+37            android:exported="true"
+37-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\WearableSensorData\wear\src\main\AndroidManifest.xml:23:13-36
+38            android:label="@string/app_name" >
+38-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\WearableSensorData\wear\src\main\AndroidManifest.xml:24:13-45
+39            <intent-filter>
+39-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\WearableSensorData\wear\src\main\AndroidManifest.xml:25:13-28:29
+40                <action android:name="android.intent.action.MAIN" />
+40-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\WearableSensorData\wear\src\main\AndroidManifest.xml:26:17-69
+40-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\WearableSensorData\wear\src\main\AndroidManifest.xml:26:25-66
+41
+42                <category android:name="android.intent.category.LAUNCHER" />
+42-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\WearableSensorData\wear\src\main\AndroidManifest.xml:27:17-77
+42-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\WearableSensorData\wear\src\main\AndroidManifest.xml:27:27-74
+43            </intent-filter>
+44        </activity>
+45
+46        <service android:name="com.example.wearablesensordata.services.SensorForegroundService" />
+46-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\WearableSensorData\wear\src\main\AndroidManifest.xml:31:9-69
+46-->C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\WearableSensorData\wear\src\main\AndroidManifest.xml:31:18-66
+47
+48        <uses-library
+48-->[androidx.wear:wear:1.2.0] C:\Users\ASUS\.gradle\caches\transforms-3\4656c82ab75cb2596b968a2d6f0ee41a\transformed\wear-1.2.0\AndroidManifest.xml:25:9-27:40
+49            android:name="com.google.android.wearable"
+49-->[androidx.wear:wear:1.2.0] C:\Users\ASUS\.gradle\caches\transforms-3\4656c82ab75cb2596b968a2d6f0ee41a\transformed\wear-1.2.0\AndroidManifest.xml:26:13-55
+50            android:required="false" />
+50-->[androidx.wear:wear:1.2.0] C:\Users\ASUS\.gradle\caches\transforms-3\4656c82ab75cb2596b968a2d6f0ee41a\transformed\wear-1.2.0\AndroidManifest.xml:27:13-37
+51
+52        <activity
+52-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\55dbdfad36a052ac88001e643d49b4fe\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
+53            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+53-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\55dbdfad36a052ac88001e643d49b4fe\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:19-85
+54            android:exported="false"
+54-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\55dbdfad36a052ac88001e643d49b4fe\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:22:19-43
+55            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+55-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\55dbdfad36a052ac88001e643d49b4fe\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:21:19-78
+56
+57        <meta-data
+57-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\ASUS\.gradle\caches\transforms-3\828e6253056f11b2a474743af04bfaa5\transformed\jetified-play-services-basement-18.0.0\AndroidManifest.xml:21:9-23:69
+58            android:name="com.google.android.gms.version"
+58-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\ASUS\.gradle\caches\transforms-3\828e6253056f11b2a474743af04bfaa5\transformed\jetified-play-services-basement-18.0.0\AndroidManifest.xml:22:13-58
+59            android:value="@integer/google_play_services_version" />
+59-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\ASUS\.gradle\caches\transforms-3\828e6253056f11b2a474743af04bfaa5\transformed\jetified-play-services-basement-18.0.0\AndroidManifest.xml:23:13-66
+60
+61        <provider
+61-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-3\821714931530422234587f95edc8221b\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:24:9-32:20
+62            android:name="androidx.startup.InitializationProvider"
+62-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-3\821714931530422234587f95edc8221b\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:25:13-67
+63            android:authorities="com.example.wearablesensordata.androidx-startup"
+63-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-3\821714931530422234587f95edc8221b\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:26:13-68
+64            android:exported="false" >
+64-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-3\821714931530422234587f95edc8221b\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:27:13-37
+65            <meta-data
+65-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-3\821714931530422234587f95edc8221b\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
+66                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+66-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-3\821714931530422234587f95edc8221b\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+67                android:value="androidx.startup" />
+67-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-3\821714931530422234587f95edc8221b\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+68        </provider>
+69
+70        <receiver
+70-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-3\821714931530422234587f95edc8221b\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+71            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+71-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-3\821714931530422234587f95edc8221b\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+72            android:directBootAware="false"
+72-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-3\821714931530422234587f95edc8221b\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+73            android:enabled="true"
+73-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-3\821714931530422234587f95edc8221b\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+74            android:exported="true"
+74-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-3\821714931530422234587f95edc8221b\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+75            android:permission="android.permission.DUMP" >
+75-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-3\821714931530422234587f95edc8221b\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
+76            <intent-filter>
+76-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-3\821714931530422234587f95edc8221b\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+77                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+77-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-3\821714931530422234587f95edc8221b\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+77-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-3\821714931530422234587f95edc8221b\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
+78            </intent-filter>
+79            <intent-filter>
+79-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-3\821714931530422234587f95edc8221b\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+80                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+80-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-3\821714931530422234587f95edc8221b\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+80-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-3\821714931530422234587f95edc8221b\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
+81            </intent-filter>
+82            <intent-filter>
+82-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-3\821714931530422234587f95edc8221b\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+83                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+83-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-3\821714931530422234587f95edc8221b\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+83-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-3\821714931530422234587f95edc8221b\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+84            </intent-filter>
+85            <intent-filter>
+85-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-3\821714931530422234587f95edc8221b\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+86                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+86-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-3\821714931530422234587f95edc8221b\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+86-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-3\821714931530422234587f95edc8221b\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+87            </intent-filter>
+88        </receiver>
+89    </application>
+90
+91</manifest>

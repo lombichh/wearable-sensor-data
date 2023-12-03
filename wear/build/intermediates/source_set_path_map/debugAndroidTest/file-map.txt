@@ -1,4 +1,0 @@
-com.example.wearablesensordata.test.wear-androidTest-0 C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\WearableSensorData\wear\build\generated\res\resValues\androidTest\debug
-com.example.wearablesensordata.test.wear-mergeDebugAndroidTestResources-1 C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\WearableSensorData\wear\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
-com.example.wearablesensordata.test.wear-mergeDebugAndroidTestResources-2 C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\WearableSensorData\wear\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
-com.example.wearablesensordata.test.wear-merged_res-3 C:\Users\ASUS\Desktop\Projects\Coding\Java\Android\Work\WearableSensorData\WearableSensorData\wear\build\intermediates\merged_res\debugAndroidTest

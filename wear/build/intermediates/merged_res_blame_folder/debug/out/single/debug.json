@@ -1,46 +1,42 @@
 [
     {
-        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.2.1\\com.example.wearablesensordata.wear-merged_res-31:\\mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.2.1\\com.example.wearablesensordata.wear-main-33:\\mipmap-xhdpi\\ic_launcher.png"
+        "merged": "com.example.wearablesensordata.wear-merged_res-31:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.example.wearablesensordata.wear-main-33:/mipmap-mdpi/ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.2.1\\com.example.wearablesensordata.wear-merged_res-31:\\mipmap-mdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.2.1\\com.example.wearablesensordata.wear-main-33:\\mipmap-mdpi\\ic_launcher.png"
+        "merged": "com.example.wearablesensordata.wear-merged_res-31:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.example.wearablesensordata.wear-main-33:/mipmap-xhdpi/ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.2.1\\com.example.wearablesensordata.wear-merged_res-31:\\drawable_tick.png.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.2.1\\com.example.wearablesensordata.wear-main-33:\\drawable\\tick.png"
+        "merged": "com.example.wearablesensordata.wear-merged_res-31:/font_sofia_pro_medium.otf.flat",
+        "source": "com.example.wearablesensordata.wear-main-33:/font/sofia_pro_medium.otf"
     },
     {
-        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.2.1\\com.example.wearablesensordata.wear-merged_res-31:\\layout_activity_main.xml.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.2.1\\com.example.wearablesensordata.wear-main-33:\\layout\\activity_main.xml"
+        "merged": "com.example.wearablesensordata.wear-merged_res-31:/drawable_tick.png.flat",
+        "source": "com.example.wearablesensordata.wear-main-33:/drawable/tick.png"
     },
     {
-        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.2.1\\com.example.wearablesensordata.wear-merged_res-31:\\font_sofia_pro_light.otf.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.2.1\\com.example.wearablesensordata.wear-main-33:\\font\\sofia_pro_light.otf"
+        "merged": "com.example.wearablesensordata.wear-merged_res-31:/font_sofia_pro_semibold.otf.flat",
+        "source": "com.example.wearablesensordata.wear-main-33:/font/sofia_pro_semibold.otf"
     },
     {
-        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.2.1\\com.example.wearablesensordata.wear-merged_res-31:\\font_sofia_pro_regular.otf.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.2.1\\com.example.wearablesensordata.wear-main-33:\\font\\sofia_pro_regular.otf"
+        "merged": "com.example.wearablesensordata.wear-merged_res-31:/font_sofia_pro_regular.otf.flat",
+        "source": "com.example.wearablesensordata.wear-main-33:/font/sofia_pro_regular.otf"
     },
     {
         "merged": "com.example.wearablesensordata.wear-merged_res-31:/layout_activity_main.xml.flat",
         "source": "com.example.wearablesensordata.wear-main-33:/layout/activity_main.xml"
     },
     {
-        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.2.1\\com.example.wearablesensordata.wear-merged_res-31:\\mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.2.1\\com.example.wearablesensordata.wear-main-33:\\mipmap-xxhdpi\\ic_launcher.png"
+        "merged": "com.example.wearablesensordata.wear-merged_res-31:/font_sofia_pro_light.otf.flat",
+        "source": "com.example.wearablesensordata.wear-main-33:/font/sofia_pro_light.otf"
     },
     {
-        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.2.1\\com.example.wearablesensordata.wear-merged_res-31:\\font_sofia_pro_semibold.otf.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.2.1\\com.example.wearablesensordata.wear-main-33:\\font\\sofia_pro_semibold.otf"
+        "merged": "com.example.wearablesensordata.wear-merged_res-31:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.example.wearablesensordata.wear-main-33:/mipmap-hdpi/ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.2.1\\com.example.wearablesensordata.wear-merged_res-31:\\mipmap-hdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.2.1\\com.example.wearablesensordata.wear-main-33:\\mipmap-hdpi\\ic_launcher.png"
-    },
-    {
-        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.2.1\\com.example.wearablesensordata.wear-merged_res-31:\\font_sofia_pro_medium.otf.flat",
-        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.2.1\\com.example.wearablesensordata.wear-main-33:\\font\\sofia_pro_medium.otf"
+        "merged": "com.example.wearablesensordata.wear-merged_res-31:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.example.wearablesensordata.wear-main-33:/mipmap-xxhdpi/ic_launcher.png"
     }
 ]

@@ -1,4 +1,0 @@
-#Fri Jul 28 20:27:52 CEST 2023
-base.0=C\:\\Users\\ASUS\\Desktop\\Projects\\Coding\\Java\\Android\\Work\\WearableSensorData\\WearableSensorData\\mobile\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\0\\classes.dex
-path.0=0/classes.dex
-renamed.0=classes.dex
